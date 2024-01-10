@@ -4,6 +4,7 @@ from django.contrib.auth.models import User,Group
 ################################################################################################################################################################################
 
 from apps.base import models 
+from apps.base.models import Service, Why
 
 # Register your models here.
 class SettingsPhoneInline(admin.TabularInline):
@@ -17,6 +18,7 @@ class SettingsFilterAdmin(admin.ModelAdmin):
     search_fields = ('title', 'descriptions')
     inlines = [SettingsPhoneInline]
 
+
 ################################################################################################################################################################################
 
 admin.site.register(models.Settings, SettingsFilterAdmin)
@@ -25,3 +27,5 @@ admin.site.register(models.Settings, SettingsFilterAdmin)
 
 admin.site.unregister(User)
 admin.site.unregister(Group)
+admin.site.register(Service)
+admin.site.register(Why)

@@ -24,13 +24,12 @@
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 							<div class="theme__content text-lg-start text-center mb-5 mb-lg-0">
-								<h4 class="theme__subtitle">We Provide</h4>
+								<!-- <h4 class="theme__subtitle">We Provide</h4> -->
 								<h2>
-									<span data-text="Best Ultrafast" class="main__title">Best Ultrafast</span>
-									<span data-text="Hosting Solution" class="main__title">Hosting Solution</span>
+									<span data-text="One code" class="main__title">{{settings.title}}</span>
+									<!-- <span data-text="Hosting Solution" class="main__title">Hosting Solution</span> -->
 								</h2>
-								<p class="fw-medium">Dramatically supply transparent deliverables before caward comp
-									internal or "organic" sources comp transparent.</p>
+								<p class="fw-medium">{{settings.descriptions}}.</p>
 								<a href="contact.html" class="ht_btn">Start 7 Days Trial</a>
 
 							</div>
@@ -101,14 +100,13 @@
 						<div class="col-xl-5 col-lg-6 ps-xxl-5">
 							<div class="about__wrapper ps-xxl-5 mb-30" data-aos="fade-left" data-aos-delay="300">
 								<div class="section__title mb-15">
-									<h4 class="section__title-sub">About Us</h4>
-									<h2 class="section__title-main">Affordable Hosting Solution Website</h2>
-									<p>Dramatically supply transparent deliverables before caward comp internal or
-										"organic" sources comp transparent.</p>
+									<h4 class="section__title-sub">О нас</h4>
+									<h2 class="section__title-main">{{settings.title}}</h2>
+									<p>{{settings.descriptions_about}}</p>
 								</div>
-								<p class="mb-50">Dramatically supply transparent deliverables before caward comp
+								<!-- <p class="mb-50">Dramatically supply transparent deliverables before caward comp
 									internal.
-								</p>
+								</p> -->
 								<a href="about.html" class="ht_btn">More Details</a>
 							</div>
 						</div>
@@ -204,134 +202,43 @@
 					<div class="row">
 						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
 							<div class="ht-services mb-30">
+						{% for service in service %}
 								<a class="ht-services__icon" href="services-details.html">
 									<div class="ht-services__icon-front">
 										<img src="{% static 'assets/img/icon/cloud.svg' %}" alt="cloud">
 									</div>
+									
 									<div class="ht-services__icon-back">
+										
 										<img src="{% static 'assets/img/icon/cloud-1a.svg' %}" alt="cloud">
 									</div>
 								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">Cloud Hosting</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
+								
+								<h3 class="ht-services__title"><a href="services-details.html">{{service.title}}</a></h3>
+								<p>{{service.descriptions}}</p>
 								<a class="ht-services__btn" href="services-details.html">Learn More</a>
 							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/server.svg' %}" alt="cloud">
+						</div>								
+						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">							
+							<div class="ht-services mb-30">	
+								{% endfor %}							
+								<!-- <a class="ht-services__icon" href="services-details.html"> -->
+									
+									<!-- <div class="ht-services__icon-front"> 
+										 <img src="{% static 'assets/img/icon/server.svg' %}" alt="cloud">
 									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/server-1a.svg' %}" alt="cloud">
-									</div>
-								</a>
+									<div class="ht-services__icon-back"> -->
+										<!-- <img src="{% static 'assets/img/icon/server-1a.svg' %}" alt="cloud"> -->
+									<!-- </div>
+								</a> -->
 
-								<h3 class="ht-services__title"><a href="services-details.html">Shared Hosting</a></h3>
+								<!-- <h3 class="ht-services__title"><a href="services-details.html">Single Host</a></h3>
 								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
+								<a class="ht-services__btn" href="services-details.html">Learn More</a> -->
+							<!-- </div>
 						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/hosting.svg' %}" alt="cloud">
-									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/hosting-1a.svg' %}" alt="cloud">
-									</div>
-								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">VPS Hosting</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/browser.svg' %}" alt="cloud">
-									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/browser-1a.svg' %}" alt="cloud">
-									</div>
-								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">Domain Name</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/database.svg' %}" alt="cloud">
-									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/database-1a.svg' %}" alt="cloud">
-									</div>
-								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">Dedicated Host</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/file-hosting.svg' %}" alt="cloud">
-									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/file-hosting-1a.svg' %}" alt="cloud">
-									</div>
-								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">Reseller Hosting</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/server-2.svg' %}" alt="cloud">
-									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/server-2a.svg' %}" alt="cloud">
-									</div>
-								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">WordPress Host</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
-									<div class="ht-services__icon-front">
-										<img src="{% static 'assets/img/icon/cloud-computing.svg' %}" alt="cloud">
-									</div>
-									<div class="ht-services__icon-back">
-										<img src="{% static 'assets/img/icon/cloud-computing-1a.svg' %}" alt="cloud">
-									</div>
-								</a>
-
-								<h3 class="ht-services__title"><a href="services-details.html">Single Host</a></h3>
-								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
-							</div>
-						</div>
-					</div>
-				</div>
+					</div> -->
+				<!-- </div> -->
 			</section>
 			<!-- services__area end -->
 
@@ -445,21 +352,16 @@
 						<div class="col-xl-5 col-lg-6" data-aos="fade-right" data-aos-delay="100">
 							<div class="chose__content-wrapper mb-30">
 								<div class="section__title mb-40 pe-xl-3">
-									<h4 class="section__title-sub">Why Choose Us</h4>
-									<h2 class="section__title-main">Best Powerful Server & Platform in here</h2>
-									<p>Dynamically innovate enabled synergy vis-a-vis user friendly channels.
-										Appropriately engage extensible supply chains before cutting-edge opportunities.
-									</p>
+									<!-- <h4 class="section__title-sub">Why Choose Us</h4> -->
+									<h2 class="section__title-main">{{why.title}}</h2>
+									<p>{{why.descriptions}}</p>
 								</div>
 								<div class="chose__feature">
-									<a href="#"><img src="{% static 'assets/img/icon/setting-1a.svg' %}" alt="Setting"> Fully
-										Customizable <span class="float-end"><i
+									<a href="#"><img src="{% static 'assets/img/icon/setting-1a.svg' %}" alt="Setting">{{why.why_1}}<span class="float-end"><i
 												class="fal fa-arrow-right"></i></span></a>
-									<a href="#"><img src="{% static 'assets/img/icon/graph-1a.svg' %}" alt="Setting"> Easy SEO
-										Friendly <span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
+									<a href="#"><img src="{% static 'assets/img/icon/graph-1a.svg' %}" alt="Setting"> {{why.why_2}} <span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
 									<a href="#"><img src="{% static 'assets/img/icon/shield-done-1a.svg' %}" alt="Setting">
-										Better
-										Security and faster <span class="float-end"><i
+										{{why.why_3}} <span class="float-end"><i
 												class="fal fa-arrow-right"></i></span></a>
 								</div>
 							</div>

@@ -14,6 +14,10 @@ class Settings(models.Model):
         verbose_name="Информационный текст",
         blank=True,null=True
     )
+    descriptions_about = models.TextField(
+        verbose_name="Информационный текст о нас",
+        blank=True,null=True
+    )
     logo = ResizedImageField(
         force_format="WEBP", 
         quality=100, 
@@ -23,23 +27,21 @@ class Settings(models.Model):
     )
     email = models.EmailField(
         max_length=255,
-        verbose_name='Почта'
+        verbose_name='Почта',
         )
     location = models.CharField(
         max_length=255,
-        verbose_name='Адрес'
+        verbose_name='Адрес',
     )
     whatsapp = models.URLField(
         verbose_name='Whatspp URL',
-        blank=True, null=True
     )
     whatsapp_number = models.CharField(
         max_length = 255,
-        verbose_name = "Whatsapp номер"
+        verbose_name = "Whatsapp номер",
     )
     instagram = models.URLField(
         verbose_name='Instagram URL',
-        blank=True, null=True
     )
     youtube = models.URLField(
         verbose_name='Youtube URL',
@@ -67,3 +69,28 @@ class SettingsPhone(models.Model):
         unique_together = ('settings', 'phone')
         verbose_name = "Дополнительный телефонный номер"
         verbose_name_plural = "Дополнительный телефонный номер"
+
+class Service(models.Model):
+    title =  models.CharField(max_length=255, verbose_name="Заголовок")
+    descriptions = models.TextField(verbose_name="Описание")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "2) Наша услуга"
+        verbose_name_plural = "2) Наши услуги"
+
+class Why(models.Model):
+    title =  models.CharField(max_length=50, verbose_name="Заголовок")
+    descriptions = models.TextField(verbose_name="Описание")
+    why_1 = models.CharField(max_length=100, verbose_name="Почему_1")
+    why_2 = models.CharField(max_length=100, verbose_name="Почему_2")
+    why_3 = models.CharField(max_length=100, verbose_name="Почему_3")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "3) Почему мы"
+        verbose_name_plural = "3) Почему мы"
