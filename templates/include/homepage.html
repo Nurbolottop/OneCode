@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="keywords"
+		content="{{settings.descriptions}}">
+	<meta name="description"
+		content="{{settings.title}} - {{settings.descriptions}}">
+	<title>{{settings.title}} - {{settings.descriptions}}</title>
+	<meta property="og:site_name" content="{{settings.title}}">
+	<meta property="og:url" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{settings.title}} - {{settings.descriptions}}">
+	<meta name='og:image' content='{{settings.logo.url}}'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#913BFF">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#913BFF">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
+
+	<!-- <link rel="manifest" href="site.webmanifest" /> -->
+	<link rel="shortcut icon" type="image/x-icon" href="{{settings.logo.url}}" />
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="assets/fonts/bootstrap-icons/font-css.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/metisMenu.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/aos.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/spacing.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+</head>
+
+<body>
+    {% block content %}
+
+    {% endblock %}
+
+
+	<script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+	<script src="{% static 'assets/js/vendor/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+	<script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+	<script src="{% static 'assets/js/slick.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.supermarquee.min.js' %}"></script>
+	<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+	<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'assets/js/metisMenu.min.js' %}"></script>
+	<script src="{% static 'assets/js/wow.min.js' %}"></script>
+	<script src="{% static 'assets/js/aos.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'assets/js/tilt.jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.easypiechart.min.js' %}"></script>
+	<script src="{% static 'assets/js/lenis.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery-ui.js' %}"></script>
+
+	<!--Custom JS here -->
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+
+</body>
+
+</html>

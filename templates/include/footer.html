@@ -1,0 +1,108 @@
+{% load static %}
+<footer class="footer-area">
+    <div class="footer-bg-one pt-80 pb-80">
+        <img src="{% static 'assets/img/shape/s-pattern-8b.svg' %}" alt="" class="foot-pattern  img-fluid">
+        <img src="{% static 'assets/img/shape/s-pattern-9b.svg' %}" alt="" class="foot-pattern-2 img-fluid">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-xxl-2 col-lg-3 col-md-6">
+                    <div class="footer__widget mb-30">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li>
+                                <a href="about.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="blog.html">Popular</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Best Offer</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Destinations</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-4 col-md-6">
+                    <div class="footer__widget mb-30 ps-xxl-5">
+                        <h4 class="widget-title">Контакты</h4>
+                        <ul class="fot-list">
+                            <li>
+                                <a href="{{settings.email}}">{{settings.email}}</a>
+                            </li>
+                            {% for settings in settings.phone_title.all %}
+                            <li>
+                                <a href="{{settings.phone}}">{{settings.phone}}</a>
+                            </li>
+                            {% endfor %}
+                            <li>
+                                <a href="{{settings.location}}">{{settings.location}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-5 col-md-6">
+                    <div class="footer__widget mb-30">
+                        <h4 class="widget-title">Subscribe</h4>
+                        <p>Phosfluorescentl aggregate bleed channels rather global araa.</p>
+                        <div class="ht-footer-subscribe-form mt-20 mb-40">
+                            <form action="#" method="get">
+                                <input type="text" placeholder="Email">
+                                <button class="widget-btn" type="submit"> <i class="fal fa-arrow-right"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="social-links">
+
+                            {% if settings.facebook %}
+                            <a href="{{settings.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+
+                            {% if settings.whatsapp %}
+                            <a href="{{settings.whatsapp}}"><i class="fab fa-whatsapp"></i></a>
+                            {% endif %}
+
+                            {% if settings.instagram %}
+                            <a href="{{settings.instagram}}"><i class="fab fa-instagram"></i></a>
+                            {% endif %}
+
+                            {% if settings.youtube %}
+                            <a href="{{settings.youtube}}"><i class="fab fa-youtube"></i></a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-lg-6 col-md-6">
+                    <div class="footer__widget mb-30 ps-xxl-5">
+                        <div class="footer-map"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14586.166757415316!2d90.38692934999999!3d23.941277999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1679829942260!5m2!1sen!2sbd"
+                                style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright__area heding-bg pt-25 pe-lg-5 ps-lg-5 pb-1">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <div class="copyright__text mb-20">
+                            <p>
+                                <a class="fw-bold"
+                                    href="https://themeforest.net/user/hamina-themes/portfolio">Hamina-Themes</a>
+                                © 2022, All Rights Reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 text-center text-lg-end mb-20">
+                        <div class="hosting__payment"><img class="img-fluid" src="{% static 'assets/img/footer/payment.svg' %}"
+                                alt="payment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
