@@ -5,22 +5,22 @@
 				<div class="icon"><img src="{% static 'assets/img/favicon.png' %}" alt="" class="m-auto d-block" width="60">
 				</div>
 				<div class="txt-loading">
-					<span data-text-preloader="H" class="letters-loading">
+					<span data-text-preloader="O" class="letters-loading">
 						O
 					</span>
-					<span data-text-preloader="o" class="letters-loading">
+					<span data-text-preloader="n" class="letters-loading">
 						n
 					</span>
-					<span data-text-preloader="s" class="letters-loading">
+					<span data-text-preloader="e" class="letters-loading">
 						e
 					</span>
-					<span data-text-preloader="t" class="letters-loading">
+					<span data-text-preloader="C" class="letters-loading">
 						C
 					</span>
-					<span data-text-preloader="i" class="letters-loading">
+					<span data-text-preloader="o" class="letters-loading">
 						o
 					</span>
-					<span data-text-preloader="r" class="letters-loading">
+					<span data-text-preloader="d" class="letters-loading">
 						d
 					</span>
 					<span data-text-preloader="e" class="letters-loading">
@@ -52,81 +52,7 @@
 		<!-- offcanvas end  -->
 
 		<!-- shopping-cart-bar start -->
-		<div class="cart-menu-right cart-style-1 white-bg">
-			<div class="close-icon float-right">
-				<a href="javascript:void(0);"><i class="fal fa-times"></i></a>
-			</div>
-			<div class="dropdown-cart-products">
-				<div class="product">
-					<div class="product__cart-details">
-						<h5 class="product-title">
-							<a href="product.html">Best color ful Lamp for ceiling</a>
-						</h5>
-
-						<span class="cart-product-info">
-							<span class="cart-product-qty">1</span>
-							x $84.00
-						</span>
-					</div>
-
-					<figure class="product__image-container">
-						<a href="product.html" class="product-img">
-							<img src="{% static 'assets/img/product/cart/product-01.jpg' %}" alt="product">
-						</a>
-					</figure>
-					<a href="#" class="remove-btn" title="Product remove"><i class="fal fa-times"></i></a>
-				</div>
-				<div class="product">
-					<div class="product__cart-details">
-						<h5 class="product-title">
-							<a href="product.html">Love color Table Lamp for room</a>
-						</h5>
-
-						<span class="cart-product-info">
-							<span class="cart-product-qty">1</span>
-							x $84.00
-						</span>
-					</div>
-
-					<figure class="product__image-container">
-						<a href="product.html" class="product-img">
-							<img src="{% static 'assets/img/product/cart/product-02.jpg' %}" alt="product">
-						</a>
-					</figure>
-					<a href="#" class="remove-btn" title="Product remove"><i class="fal fa-times"></i></a>
-				</div>
-				<div class="product">
-					<div class="product__cart-details">
-						<h5 class="product-title">
-							<a href="product.html">Best color ful Lamp for ceiling</a>
-						</h5>
-
-						<span class="cart-product-info">
-							<span class="cart-product-qty">1</span>
-							x $84.00
-						</span>
-					</div>
-
-					<figure class="product__image-container">
-						<a href="product.html" class="product-img">
-							<img src="{% static 'assets/img/product/cart/product-03.jpg' %}" alt="product">
-						</a>
-					</figure>
-					<a href="#" class="remove-btn" title="Product remove"><i class="fal fa-times"></i></a>
-				</div>
-			</div>
-
-			<div class="cart-total mb-15">
-				<span>Total</span>
-				<span class="cart-total-price">$160.00</span>
-			</div>
-
-			<div class="cart-action">
-				<a href="cart.html" class="btn btn-primary">View Cart</a>
-				<a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i
-						class="fal fa-long-arrow-right"></i></a>
-			</div>
-		</div>
+		
 		<!-- shopping-cart-bar end -->
 
 		<!-- header-area start -->
@@ -136,9 +62,9 @@
 					<div class="row align-items-center">
 						<div class="col-lg-2 col-sm-4 col-6">
 							<div class="logo-area">
-								<a class="front" href="index.html"><img src="{{settings.logo.url}}" width = "100px" 
+								<a class="front" href="{% url 'index' %}"><img src="{{settings.logo.url}}" width = "100px" 
 										alt="Header-logo"></a>
-								<a class="back" href="index.html"><img src="{{settings.logo.url}}" width = "100px" 
+								<a class="back" href="{% url 'index' %}"><img src="{{settings.logo.url}}" width = "100px" 
 										alt="Header-logo"></a>
 							</div>
 						</div>
@@ -148,26 +74,10 @@
 								<nav id="mobile-menu">
 									<ul class="menu-list">
 										<li>
-											<a href="#">
-												Home
+											<a href="{% url 'index' %}">
+												Главная
 											</a>
-											<ul class="sub-menu">
-												<li>
-													<a href="index.html">Home Style 1</a>
-												</li>
-												<li>
-													<a href="index-2.html">Home Style 2</a>
-												</li>
-												<li>
-													<a href="index-3.html">Home Style 3</a>
-												</li>
-												<li>
-													<a href="index-4.html">Home Style 4</a>
-												</li>
-												<li>
-													<a href="index-5.html">Home Style 5</a>
-												</li>
-											</ul>
+											
 										</li>
 										<li>
 											<a href="#">
@@ -260,32 +170,7 @@
 											</ul>
 										</li>
 										<li>
-											<a href="#">Blog</a>
-											<ul class="sub-menu">
-												<li>
-													<a href="blog-grid.html">Blog Grid</a>
-												</li>
-												<li>
-													<a href="blog-masonry.html">Blog
-														Masonry</a>
-												</li>
-												<li>
-													<a href="blog-classic.html">Blog
-														Classic</a>
-												</li>
-												<li>
-													<a href="blog-list.html">Blog
-														List</a>
-												</li>
-												<li>
-													<a href="blog-single-v1.html">Blog Details
-														V1</a>
-												</li>
-												<li>
-													<a href="blog-single-v2.html">Blog Details
-														V2</a>
-												</li>
-											</ul>
+											<a href="{% url 'blog' %}">Блок</a>
 										</li>
 										<li>
 											<a href="contact.html">contact</a>
@@ -294,12 +179,7 @@
 								</nav>
 							</div>
 							<div class="right-nav mb-0 d-flex align-items-center ms-sm-5">
-								<div class="cart__menu">
-									<a class="shopping-cart" href="#">
-										<i class="bi bi-bag"></i>
-										<span class="badge">0</span>
-									</a>
-								</div>
+								
 								<div class="search-area me-4 ms-2">
 									<a class="search_input" href="#" data-bs-toggle="offcanvas"
 										data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">

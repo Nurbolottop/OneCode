@@ -182,6 +182,26 @@ JAZZMIN_SETTINGS = {
 
 }
 
+# jazzmin
+JAZZMIN_UI_TWEAKS = {
+    # белый фон:
+    # "theme": "flatly",
+    # "theme" : "simplex",  # белый фон с цветами - RGB
+    # "theme": "sketchy",     #  мультяшный
+
+    # темный фон:
+    "theme": "darkly",
+    #"theme": "slate",    # темный (серьезный , полностью)
+
+}
+
+
+
+EMAIL_USE_TLS = True  # Использовать TLS для защищенного соединения
+EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
+EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
+EMAIL_HOST_USER = 'nuraj9663@gmail.com'
+EMAIL_HOST_PASSWORD = 'ваш пароль'
 
 
 # Ckeditor
