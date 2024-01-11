@@ -131,14 +131,15 @@
 								<div class="widget-form mt-60 mb-50">
 									<h3 class="widget__title__three text-white mb-15">Контакты</h3>
 									<p class="mb-40">Совместно разрабатывайте перспективные задачи с помощью прозрачных технологий.</p>
-									<form action="#">
-										<input name = 'name' type="text" placeholder="Ваше имя">
-										<input name = 'email' type="email" placeholder="Почта">
-										<textarea name = 'message' name="message" placeholder="Сообщение"
-											spellcheck="false"></textarea>
-									</form>
-									<button class="widget-btn mt-20">
-										Связаться</button>
+									<form action="#" method="POST">
+										{% csrf_token %}
+										<input name="name" type="text" placeholder="Ваше имя">
+										<input name="email" type="email" placeholder="Почта">
+										<textarea name="message" placeholder="Сообщение" spellcheck="false"></textarea>
+										<button type="submit" class="widget-btn mt-20">
+										  Связаться
+										</button>
+									  </form>
 								</div>
 								
 							</div>
