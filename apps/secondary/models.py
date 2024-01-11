@@ -24,8 +24,8 @@ class Slide(models.Model):
         return self.title
     
     class Meta:
-        verbose_name = 'Слайд'
-        verbose_name_plural = 'Слайды'
+        verbose_name = '1) Слайд'
+        verbose_name_plural = '1) Слайды'
 
 
 class News(models.Model):
@@ -67,8 +67,8 @@ class News(models.Model):
         return self.title
     
     class Meta:
-        verbose_name = 'Новость'
-        verbose_name_plural = 'Новости'
+        verbose_name = '2) Новость'
+        verbose_name_plural = '2) Новости'
 
 
 class Function(models.Model):
@@ -105,9 +105,69 @@ class Function(models.Model):
         return self.name1
     
     class Meta:
-        verbose_name = 'Удобная Функция'
-        verbose_name_plural = 'Удобные Функции'
+        verbose_name = '3) Удобная Функция'
+        verbose_name_plural = '3) Удобные Функции'
 
 
     
+class Faq(models.Model):
+    question = models.CharField(
+        max_length = 255,
+        verbose_name = 'Вопросы'
+    )
+    answer = models.TextField(
+        verbose_name = 'Ответы'
+    )
 
+    def __str__(self):
+        return self.question
+    
+    class Meta:
+        verbose_name = '4) Частый вопрос'
+        verbose_name_plural = '4) Частые вопросы'
+
+#  пока не надо деди
+# class GoodPrice(models.Model):
+#     title = models.CharField(
+#         max_length = 255,
+#         verbose_name = 'Название'
+#     )
+#     descriptions = models.CharField(
+#         max_length = 255,
+#         verbose_name = 'Описание'
+#     )
+#     price = models.CharField(
+#         max_length = 255,
+#         verbose_name = 'Цена'
+#     )
+    
+#     def __str__(self):
+#         return self.title
+    
+#     class Meta:
+#         verbose_name = '5) Лучшая цена'
+#         verbose_name_plural = '5) Лучшие цены'
+
+# class GoodPriceFeatcher(models.Model):
+#     place_info = models.ForeignKey(GoodPrice,related_name = "price_inline_info", on_delete  = models.CASCADE )
+#     title = models.CharField(
+#         max_length = 255,
+#         verbose_name = 'Характиристика'
+#     )
+
+#     class Meta:
+#         unique_together = ('place_info', 'title')
+
+
+class Partners(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='partner_image/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+
+    class Meta:
+        verbose_name = '5) Партнер'
+        verbose_name_plural = '5) Партнеры'

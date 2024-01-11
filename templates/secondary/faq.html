@@ -119,101 +119,21 @@
 						<div class="col-lg-10 px-xl-0">
 							<div class="faq-que-list faq-que-three mb-40">
 								<div class="accordion accordion-one" id="accordionThree">
+									{% for faq in faq %}
 									<div class="accordion-item">
 										<h2 class="accordion-header" id="headingSix">
 											<button class="accordion-button" type="button" data-bs-toggle="collapse"
 												data-bs-target="#collapseSix" aria-expanded="true"
-												aria-controls="collapseSix">1. What kind of server reliability and
-												uptime scores do you offer?
-											</button>
+												aria-controls="collapseSix">{{faq.question}}
 										</h2>
 										<div id="collapseSix" class="accordion-collapse collapse show"
 											aria-labelledby="headingSix" data-bs-parent="#accordionThree">
 											<div class="accordion-body">
-												<p>Here you can write answers to the most frequently asked
-													questions. It’s better to answer them on your website once than
-													personally more frequently. Here you can write answers to the
-													most frequently asked questions. It’s better to answer them on
-													your website once than personally more frequently.</p>
+												<p>{{faq.answer}}</p>
 											</div>
 										</div>
 									</div>
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingSeven">
-											<button class="accordion-button collapsed" type="button"
-												data-bs-toggle="collapse" data-bs-target="#collapseSeven"
-												aria-expanded="false" aria-controls="collapseSeven">
-												2. What is your security policy?
-											</button>
-										</h2>
-										<div id="collapseSeven" class="accordion-collapse collapse"
-											aria-labelledby="headingSeven" data-bs-parent="#accordionThree">
-											<div class="accordion-body">
-												<p>Here you can write answers to the most frequently asked
-													questions. It’s better to answer them on your website once than
-													personally more frequently. Here you can write answers to the
-													most frequently asked questions. It’s better to answer them on
-													your website once than personally more frequently.</p>
-											</div>
-										</div>
-									</div>
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingEight">
-											<button class="accordion-button collapsed" type="button"
-												data-bs-toggle="collapse" data-bs-target="#collapseEight"
-												aria-expanded="false" aria-controls="collapseEight">
-												3. Do you provide Multiple Add-on Domains?
-											</button>
-										</h2>
-										<div id="collapseEight" class="accordion-collapse collapse"
-											aria-labelledby="headingEight" data-bs-parent="#accordionThree">
-											<div class="accordion-body">
-												<p>Here you can write answers to the most frequently asked
-													questions. It’s better to answer them on your website once than
-													personally more frequently. Here you can write answers to the
-													most frequently asked questions. It’s better to answer them on
-													your website once than personally more frequently.</p>
-											</div>
-										</div>
-									</div>
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingNine">
-											<button class="accordion-button collapsed" type="button"
-												data-bs-toggle="collapse" data-bs-target="#collapseNine"
-												aria-expanded="false" aria-controls="collapseNine">4. What’s your
-												downtime history?</button>
-										</h2>
-										<div id="collapseNine" class="accordion-collapse collapse"
-											aria-labelledby="headingNine" data-bs-parent="#accordionThree">
-											<div class="accordion-body">
-												<p>Here you can write answers to the most frequently asked
-													questions. It’s better to answer them on your website once than
-													personally more frequently. Here you can write answers to the
-													most frequently asked questions. It’s better to answer them on
-													your website once than personally more frequently.</p>
-											</div>
-										</div>
-									</div>
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingTen">
-											<button class="accordion-button collapsed" type="button"
-												data-bs-toggle="collapse" data-bs-target="#collapseTen"
-												aria-expanded="false" aria-controls="collapseTen">5. How many
-												customers are on each server?
-											</button>
-										</h2>
-										<div id="collapseTen" class="accordion-collapse collapse"
-											aria-labelledby="headingTen" data-bs-parent="#accordionThree">
-											<div class="accordion-body">
-												<p>Here you can write answers to the most frequently asked
-													questions. It’s better to answer them on your website once than
-													personally more frequently. Here you can write answers to the
-													most frequently asked questions. It’s better to answer them on
-													your website once than personally more frequently.</p>
-											</div>
-										</div>
-									</div>
-								</div>
+									{% endfor %}
 							</div>
 							<div class="faq__btn text-center mb-30" data-aos="fade-up" data-aos-delay="250">
 								<a class="ht_btn" href="#">Задать вопрос</a>
@@ -243,23 +163,7 @@
 			<!-- cta__area__two end -->
 
 			<!-- subscribe__newsletter start -->
-			<div class="subscribe__newsletter pt-80 pb-45" data-background="{% static 'assets/img/bg/cta-bg.jpg' %}">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-7 pe-lg-0">
-							<div class="text-lg-start text-center mb-30">
-								<h2 class="cta__title__two">Подписывайтесь на нашу новостную рассылку</h2>
-							</div>
-						</div>
-						<div class="col-lg-5 ps-lg-0">
-							<form class="subscribe__form mb-30">
-								<input type="text" placeholder="Ваша почта...">
-								<button class="ht_btn submit-btn">ПОДПИСАТЬСЯ</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
+			{% include 'include/subscribe.html' %}
 			<!-- subscribe__newsletter end -->
 
 

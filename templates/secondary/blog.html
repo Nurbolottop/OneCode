@@ -110,23 +110,7 @@
 			<!-- blog__grid__section end -->
 
 			<!-- subscribe__newsletter start -->
-			<div class="subscribe__newsletter pt-80 pb-45" data-background="{% static 'assets/img/bg/cta-bg.jpg' %}">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-7 pe-lg-0">
-							<div class="text-lg-start text-center mb-30">
-								<h2 class="cta__title__two">Подписывайтесь на нашу новостную рассылку</h2>
-							</div>
-						</div>
-						<div class="col-lg-5 ps-lg-0">
-							<form class="subscribe__form mb-30">
-								<input type="text" placeholder="Ваша почта...">
-								<button class="ht_btn submit-btn">ПОДПИСАТЬСЯ</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
+			{% include 'include/subscribe.html' %}
 			<!-- subscribe__newsletter end -->
 
 

@@ -94,3 +94,67 @@ class Why(models.Model):
     class Meta:
         verbose_name = "3) Почему мы"
         verbose_name_plural = "3) Почему мы"
+
+class Team(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='team_image/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    name = models.CharField(
+        max_length = 255,
+        verbose_name = 'Имя'
+    )
+    work = models.CharField(
+        max_length = 255,
+        verbose_name = 'Должность'
+    )
+    descriptions = models.TextField(
+        verbose_name = 'Описание'
+    )
+    facebook = models.URLField(
+        verbose_name = 'facebook URL'
+    )
+    twitter = models.URLField(
+        verbose_name = 'twitter URL'
+    )
+    instagram = models.URLField(
+        verbose_name = 'instagram URL'
+    )
+    youtube = models.URLField(
+        verbose_name = 'youtube URL'
+    )
+    phone = models.CharField(
+        max_length = 255,
+        verbose_name = 'Телефонный номер',
+        blank=True, null= True
+    )
+    email = models.EmailField(
+        verbose_name = 'Почта',
+        blank=True, null= True
+    )
+    language = models.CharField(
+        max_length = 255,
+        verbose_name = 'Языки которые знает',
+        blank=True, null= True
+    )
+    experience = models.CharField(
+        max_length = 255,
+        verbose_name = 'Опыт работы',
+        blank=True, null= True
+    )
+    biography = RichTextField(
+        verbose_name = 'биография'
+    )
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = '4) Команда'
+        verbose_name_plural = '4) Команды'
+
+
+    

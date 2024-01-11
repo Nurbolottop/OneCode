@@ -18,14 +18,17 @@ class SettingsFilterAdmin(admin.ModelAdmin):
     search_fields = ('title', 'descriptions')
     inlines = [SettingsPhoneInline]
 
+class TeamFilterAdmin(admin.ModelAdmin):
+    list_filter = ('name', )
+    list_display = ('name', 'descriptions')
+    search_fields = ('name', 'descriptions')
 
 ################################################################################################################################################################################
-
+admin.site.register(models.Team, TeamFilterAdmin)
 admin.site.register(models.Settings, SettingsFilterAdmin)
-
+admin.site.register(Service)
+admin.site.register(Why)
 ################################################################################################################################################################################
 
 admin.site.unregister(User)
 admin.site.unregister(Group)
-admin.site.register(Service)
-admin.site.register(Why)

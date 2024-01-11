@@ -104,19 +104,18 @@
 																class="bi bi-chevron-down"></i></span></a>
 													<ul class="sub-menu">
 														<li>
-															<a href="team.html">Team</a>
+															<a href="{% url 'team' %}">Команда</a>
 														</li>
 														<li>
-															<a href="team-details.html">Team
-																Details</a>
+															<a href="{% url 'team_details' settings.id %}">Вся команда</a>
 														</li>
 													</ul>
 												</li>
 												<li>
-													<a href="price.html">Price</a>
+													<a href="{% url 'price' %}">Price</a>
 												</li>
 												<li>
-													<a href="faq.html">FAQ</a>
+													<a href="{% url 'faq' %}">FAQ</a>
 												</li>
 												<li>
 													<a href="error.html">Error - 404</a>
@@ -210,7 +209,7 @@
 			<!-- offset-sidebar start -->
 			<div class="offset-sidebar">
 				<div class="offset-widget offset-logo mb-30">
-					<a href="index.html">
+					<a href="{% url 'index' %}">
 						<img src="{{settings.logo.url}}" width = "100px"  alt="logo">
 					</a>
 				</div>
