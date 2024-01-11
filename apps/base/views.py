@@ -6,7 +6,9 @@ from apps.base.models import Settings
 from apps.secondary import models
 from apps.telegram_bot.views import get_text
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from apps.contacts.models import BlogContact,ServiceContact
+from apps.products.models import Service
+\
 # Create your views here.
 def index(request):
 #Base----------------------------------------------------------
@@ -56,7 +58,22 @@ def blog_detail(request, id):
         'last_news': last_news,
     }
 
-
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        if BlogContact.objects.filter(message=message).exists():
+            return render(request, 'secondary/blog_detail.html', {'error_message': 'Такое сообщение уже отправлено'})
+        
+        contact = BlogContact.objects.create(name=name, email=email, message=message)
+        
+        get_text(f"""
+Оставили запрос о блоге
+👇👇👇👇👇👇👇👇👇👇👇
+Имя: {name}.
+Почта: {email}.
+Сообщение: {message}."""
+        )
     return render(request, 'secondary/blog_detail.html', locals())
 
 def faq(request):
@@ -64,6 +81,34 @@ def faq(request):
     slide = models.Slide.objects.latest('id')
     function =  models.Function.objects.latest('id')
     return render(request, 'secondary/faq.html', locals())
+def service(request):
+    settings = Settings.objects.latest("id")
+    services = Service.objects.all()
+    return render(request, 'service/service-1.html', locals())
+
+def service_detail(request, id):
+    service = Service.objects.get(id=id)    
+    settings = Settings.objects.latest("id")
+    slide = models.Slide.objects.latest('id')
+    all_news = models.News.objects.all()
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        if ServiceContact.objects.filter(message=message).exists():
+            return render(request, 'service/service-details.html', {'error_message': 'Такое сообщение уже отправлено'})
+        
+        contact = BlogContact.objects.create(name=name, email=email, message=message)
+        
+        get_text(f"""
+Оставили запрос о услуге
+👇👇👇👇👇👇👇👇👇👇👇
+Имя: {name}.
+Почта: {email}.
+Сообщение: {message}."""
+        )
+    return render(request, 'service/service-details.html',locals())
+
 
 #Contacts ----------------------------------------------------------
     
