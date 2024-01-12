@@ -30,8 +30,8 @@ class Service(models.Model):
     def __str__(self):
         return f'{self.title} - {self.descriptions}'
     class Meta():
-        verbose_name='Услуги'
-        verbose_name_plural = 'Услуги'
+        verbose_name='1) Услуги'
+        verbose_name_plural = '1) Услуги'
   
 class OftenService(models.Model):
     service = models.ForeignKey(Service, related_name='often_dervice',   on_delete=models.CASCADE)
@@ -47,5 +47,5 @@ class OftenService(models.Model):
     )
     class Meta:
         unique_together = ('service', 'title', 'image', 'descriptions')
-        verbose_name = "Чатстый вопрос"
-        verbose_name_plural = "Чатсты вопросы"
+        verbose_name = "Частый вопрос"
+        verbose_name_plural = "Частые вопросы"

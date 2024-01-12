@@ -2,38 +2,29 @@ from django.shortcuts import render,redirect
 
 ################################################################################################################################################################################
 
-from apps.base.models import Settings, Team, Review, Why, Video
+from apps.base.models import Settings, Team, Review
 from apps.secondary import models
 from apps.telegram_bot.views import get_text
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from apps.contacts.models import BlogContact,ServiceContact, Contact
 from apps.products.models import Service
-
+\
 # Create your views here.
 def index(request):
 #Base----------------------------------------------------------
     settings = Settings.objects.latest("id")
     reviews = Review.objects.all()
-    news = models.News.objects.all()
-    partners = models.Partners.objects.all()
-
     return render(request,'base/index.html', locals())
 
 def team(request):
     team = Team.objects.all()
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
-    partners = models.Partners.objects.all()
     return render(request, 'base/team.html', locals())
 
-
 def about(request):
-    video = Video.objects.latest('id')
-    team = Team.objects.all()
-    why = Why.objects.latest('id')
     settings = Settings.objects.latest("id")
-    function =  models.Function.objects.latest('id')
-    partners = models.Partners.objects.all()
+    slide = models.Slide.objects.latest('id')
     return render(request, 'base/about.html', locals())
 #Secondary----------------------------------------------------------
 def blog(request):
@@ -103,6 +94,7 @@ def faq(request):
     slide = models.Slide.objects.latest('id')
     function =  models.Function.objects.latest('id')
     return render(request, 'secondary/faq.html', locals())
+
 def service(request):
     settings = Settings.objects.latest("id")
     services = Service.objects.all()
@@ -180,14 +172,4 @@ Email: {email}.
 Сообщение: {message}.
 """)
     return render(request, 'base/contact.html', locals())
-################################################################################################################################################################################
-
-
-#Users ----------------------------------------------------------
-def login(request):
-    settings = Settings.objects.latest("id")
-    slide = models.Slide.objects.latest('id')
-    
-    return render(request, 'users/login.html', locals())
-
 ################################################################################################################################################################################

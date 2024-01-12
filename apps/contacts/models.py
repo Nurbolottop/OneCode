@@ -17,8 +17,8 @@ class BlogContact(models.Model):
     def __str__(self):
         return self.name
     class Meta():
-        verbose_name='Зопрос на Блоге'
-        verbose_name_plural='Зопросs на Блоге'
+        verbose_name='1) Запрос на Блоге'
+        verbose_name_plural='1) Запросы на Блоге'
         
 class ServiceContact(models.Model):
     name = models.CharField(
@@ -34,8 +34,8 @@ class ServiceContact(models.Model):
     def __str__(self):
         return self.name
     class Meta():
-        verbose_name='Зопрос о услуге'
-        verbose_name_plural='Зопросы на услуги'
+        verbose_name='2) Запрос о услуге'
+        verbose_name_plural='3) Запросы на услуги'
         
 class Contact(models.Model):
     name = models.CharField(
@@ -63,7 +63,7 @@ class Contact(models.Model):
     def __str__(self):
         return f'{self.name} = {self.mesage}'
     class Meta:
-        verbose_name='Контакт'
-        verbose_name_plural='Контакты'
+        verbose_name='4) Контакт'
+        verbose_name_plural='4) Контакты'
         
 ################################################################################################################################################################################
