@@ -6,7 +6,7 @@ from apps.base import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path('about/', views.about, name='about'),
+    # path('about/', views.about, name='about'),
     path('team/', views.team, name='team'),
     path('blog/', views.blog, name='blog' ),
     path('blog_detail/<int:id>/', views.blog_detail, name='blog_detail'),
@@ -15,10 +15,7 @@ urlpatterns = [
     path("service/", views.service, name="service"),
     path('price', views.price, name='price'),
     path('team_details/<int:id>/', views.team_details, name='team_details'),
-<<<<<<< HEAD
     path('contact/', views.contact, name='contact'),
-=======
-    path('login/', views.login, name='login')
+    # path('login/', views.login, name='login')
 
->>>>>>> 399edcde283f2d9bd0ea05abcf70f1040aa58716
 ]
