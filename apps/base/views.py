@@ -6,7 +6,7 @@ from apps.base.models import Settings, Team, Review, Why, Video
 from apps.secondary import models
 from apps.telegram_bot.views import get_text
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from apps.contacts.models import BlogContact,ServiceContact
+from apps.contacts.models import BlogContact,ServiceContact, Contact
 from apps.products.models import Service
 
 # Create your views here.
@@ -153,9 +153,33 @@ def team_details(request, id):
 
 
 #Contacts ----------------------------------------------------------
-    
-    
 
+def contact(request):
+    settings = Settings.objects.latest("id")
+    
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        country = request.POST.get('country')
+        data = request.POST.get('data')
+        message = request.POST.get('message')
+        existing_contact = Contact.objects.filter(message=message).first()
+
+        if not existing_contact:
+            contact = Contact.objects.create(name=name, email=email, phone=phone, country=country, data=data, message=message)
+        
+            get_text(f"""
+Отправлен запрос о обратной связи 
+👇👇👇👇👇👇👇👇👇👇👇
+Имя: {name}.
+Email: {email}.
+Номер телефона: {phone}.
+Страна: {country}.
+Дата: {data}.
+Сообщение: {message}.
+""")
+    return render(request, 'base/contact.html', locals())
 ################################################################################################################################################################################
 
 

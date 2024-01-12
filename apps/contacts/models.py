@@ -36,4 +36,34 @@ class ServiceContact(models.Model):
     class Meta():
         verbose_name='Зопрос о услуге'
         verbose_name_plural='Зопросы на услуги'
+        
+class Contact(models.Model):
+    name = models.CharField(
+        max_length=255,
+        verbose_name='имя'
+    )
+    email = models.EmailField(
+        verbose_name='почта'
+    )
+    country = models.CharField(
+        max_length=255,
+        verbose_name='страна'
+    )
+    phone = models.CharField(
+        max_length=255,
+        verbose_name='номер телефона'
+    )
+    data = models.DateField(
+        verbose_name='дата'
+    )
+    message = models.TextField(
+        verbose_name='Cообщение'
+    )
+    
+    def __str__(self):
+        return f'{self.name} = {self.mesage}'
+    class Meta:
+        verbose_name='Контакт'
+        verbose_name_plural='Контакты'
+        
 ################################################################################################################################################################################
