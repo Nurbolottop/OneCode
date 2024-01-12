@@ -23,7 +23,18 @@ class TeamFilterAdmin(admin.ModelAdmin):
     list_display = ('name', 'descriptions')
     search_fields = ('name', 'descriptions')
 
+    
+class ReviewFilterAdmin(admin.ModelAdmin):
+    list_filter = ('name', )
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')
+
 ################################################################################################################################################################################
+
+
+
+admin.site.register(models.Video)
+admin.site.register(models.Review)
 admin.site.register(models.Team, TeamFilterAdmin)
 admin.site.register(models.Settings, SettingsFilterAdmin)
 admin.site.register(Service)

@@ -82,11 +82,14 @@ class Service(models.Model):
         verbose_name_plural = "2) Наши услуги"
 
 class Why(models.Model):
+    
     title =  models.CharField(max_length=50, verbose_name="Заголовок")
     descriptions = models.TextField(verbose_name="Описание")
     why_1 = models.CharField(max_length=100, verbose_name="Почему_1")
     why_2 = models.CharField(max_length=100, verbose_name="Почему_2")
     why_3 = models.CharField(max_length=100, verbose_name="Почему_3")
+    why_4 = models.CharField(max_length=100, verbose_name="Почему_4")
+
 
     def __str__(self):
         return self.title
@@ -156,5 +159,36 @@ class Team(models.Model):
         verbose_name = '4) Команда'
         verbose_name_plural = '4) Команды'
 
+class Review(models.Model):
+    description = RichTextField(
+        verbose_name = 'Сам отзыв'
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='review_image/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    name = models.CharField(
+        max_length = 255,
+        verbose_name = 'Имя'
+    )
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = '5) Отзыв'
+        verbose_name_plural = '5) Отзывы'
+
 
     
+class Video(models.Model):
+    Video_url = models.URLField(
+        verbose_name = 'Видео URL'
+    )
+
+    class Meta:
+        verbose_name = '6) Видео'
+        verbose_name_plural = '6) Видео'
