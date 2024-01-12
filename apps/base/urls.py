@@ -15,10 +15,7 @@ urlpatterns = [
     path("service/", views.service, name="service"),
     path('price', views.price, name='price'),
     path('team_details/<int:id>/', views.team_details, name='team_details'),
-<<<<<<< HEAD
     path('contact/', views.contact, name='contact'),
-=======
     path('login/', views.login, name='login')
 
->>>>>>> 399edcde283f2d9bd0ea05abcf70f1040aa58716
 ]
