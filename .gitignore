@@ -7,15 +7,9 @@
 *.pyc
 __pycache__/
 local_settings.py
-<<<<<<< HEAD
 # db.sqlite3
 # db.sqlite3-journal
-
-=======
-db.sqlite3
-db.sqlite3-journal
-media
->>>>>>> 3a4634a2510ea89e73f5692a23e0f2e35564f3d4
+# media
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.

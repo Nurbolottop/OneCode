@@ -37,6 +37,7 @@ class ServiceContact(models.Model):
         verbose_name='2) Запрос о услуге'
         verbose_name_plural='3) Запросы на услуги'
         
+        
 class Contact(models.Model):
     name = models.CharField(
         max_length=255,
@@ -61,7 +62,8 @@ class Contact(models.Model):
     )
     
     def __str__(self):
-        return f'{self.name} = {self.mesage}'
+        return f'{self.name} = {self.message}'
+    
     class Meta:
         verbose_name='4) Контакт'
         verbose_name_plural='4) Контакты'
