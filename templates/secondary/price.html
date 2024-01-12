@@ -276,7 +276,7 @@
 								<div class="section__title text-center mb-45">
 									<h4 class="section__title-sub-two mb-20">Партнеры</h4>
 									<h2 class="section__title-main">
-										Нам доверяют более 100+ компаний</h2>
+										{{partners.title}}</h2>
 								</div>
 							</div>
 						</div>
@@ -302,7 +302,7 @@
 						<div class="col-xl-10">
 							<div class="cta__wrapper text-center pt-80 pb-100">
 								<h2 class="cta__title__three mb-35">Есть проект на примете? Давай приступим к работе.</h2>
-								<a class="ht_btn" href="#">Связаться</a>
+								<a class="ht_btn" href="{% url 'contact' %}">Связаться</a>
 								<img class="img-fluid cta__bubble" src="{% static 'assets/img/shape/round-1.svg' %}" alt="shape">
 								<div class="cta__divider"></div>
 							</div>
