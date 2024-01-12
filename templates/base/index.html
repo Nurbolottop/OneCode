@@ -30,7 +30,7 @@
 									<!-- <span data-text="Hosting Solution" class="main__title">Hosting Solution</span> -->
 								</h2>
 								<p class="fw-medium">{{settings.descriptions}}.</p>
-								<a href="contact.html" class="ht_btn">Start 7 Days Trial</a>
+								<a href="contact.html" class="ht_btn">Начать </a>
 
 							</div>
 						</div>
@@ -46,39 +46,7 @@
 			<!-- theme__maina__banner end -->
 
 			<!-- domain__search__area start -->
-			<section class="domain__search__area pt-70 pb-45">
-				<img class="domain__shape one" src="{% static 'assets/img/shape/dm-shape-1a.png' %}" alt="shape one">
-				<img class="domain__shape two" src="{% static 'assets/img/shape/dm-shape-2a.png' %}" alt="shape two">
-				<img class="domain__shape three" src="{% static 'assets/img/shape/dm-star-1a.png' %}" alt="star one">
-				<img class="domain__shape four" src="{% static 'assets/img/shape/dm-star-2a.png' %}" alt="star two">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-xl-8 col-lg-12">
-							<div class="domain__search-wrapper">
-								<h3 class="domain__search-title mb-40">Find a domain name you like:</h3>
-								<div class="domain__search-box mb-30">
-									<select class="domain-select">
-										<option value="Open this select menu">Enter your domain name here</option>
-										<option value="Name One">Name One</option>
-										<option value="Name Two">Name Two</option>
-										<option value="Name Three">Name Three</option>
-										<option value="Name Four">Name Four</option>
-										<option value="Name Five">Name Five</option>
-									</select>
-									<button class="ht_btn">Search Domain</button>
-								</div>
-								<ul class="domain__search-list">
-									<li><a href="price.html">.com $8.99/m</a></li>
-									<li><a href="price.html">.net $7.99/m</a></li>
-									<li><a href="price.html">.info $6.99/m</a></li>
-									<li><a href="price.html">.me $5.99/m</a></li>
-									<li><a href="price.html">.xyz $1.99/m</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			
 			<!-- domain__search__area end -->
 
 			<!-- about__area start -->
@@ -107,7 +75,7 @@
 								<!-- <p class="mb-50">Dramatically supply transparent deliverables before caward comp
 									internal.
 								</p> -->
-								<a href="about.html" class="ht_btn">More Details</a>
+								<a href="{% url 'about' %}" class="ht_btn">Подробнее</a>
 							</div>
 						</div>
 					</div>
@@ -116,70 +84,34 @@
 			<!-- about__area end -->
 
 			<!-- brand__area start -->
-			<section class="brand__area pt-75 pb-150 pt-lg-30 pb-lg-60">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="section__title text-center mb-60" data-aos="fade-up" data-aos-delay="200">
-								<h4 class="section__title-sub">Partners</h4>
-								<h2 class="section__title-main">Over 100+ Company <br /> Trusted us</h2>
+			<section class="brand__area">
+				<div class="brand__bg__three pt-40 pb-100 pb-lg-60" data-background="{% static 'assets/img/bg/brand-bg-4.png' %}">
+					<div class="blur__b1"></div>
+					<div class="blur__b2"></div>
+					<div class="blur__b3"></div>
+					<div class="blur__b4"></div>
+					<div class="blur__b5"></div>
+					<img class="shapes__1 d-none d-md-inline-block" src="{% static 'assets/img/shape/ht-star-2b.svg' %}" alt="Shape">
+					<img class="shapes__2" src="{% static 'assets/img/shape/ht-star-2b.svg' %}" alt="Shape">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-6">
+								<div class="section__title text-center mb-45">
+									<h4 class="section__title-sub-two mb-20">Партнеры</h4>
+									<h2 class="section__title-main">
+										{{partners.title}}</h2>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row brand-slider-one" data-aos="fade-up" data-aos-delay="300">
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-1a.svg' %}"
-										alt="Brand Image"></a>
+						<div class="row brand-slider-one">
+							{% for partners in partners %}
+							<div class="col-2">
+								<div class="brand__wrapper text-center">
+									<a class="brand__logo" href="#"><img src="{{partners.image.url}}"
+											alt="Brand Image"></a>
+								</div>
 							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-2a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-3a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-4a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-5a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-6a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-2a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-1a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="brand__wrapper text-center">
-								<a class="brand__logo" href="#"><img src="{% static 'assets/img/brand/brand-3a.svg' %}"
-										alt="Brand Image"></a>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
@@ -194,8 +126,8 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="section__title text-center mb-60" data-aos="fade-up" data-aos-delay="100">
-								<h4 class="section__title-sub">Services</h4>
-								<h2 class="section__title-main">We Provide Best Services</h2>
+								<h4 class="section__title-sub">Cервисы</h4>
+								<h2 class="section__title-main">Мы предоставляем лучшие услуги</h2>
 							</div>
 						</div>
 					</div>
@@ -222,127 +154,28 @@
 						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">							
 							<div class="ht-services mb-30">	
 								{% endfor %}							
-								<!-- <a class="ht-services__icon" href="services-details.html"> -->
+								<!-- <a class="ht-services__icon" href="services-details.html">
 									
-									<!-- <div class="ht-services__icon-front"> 
+									<div class="ht-services__icon-front"> 
 										 <img src="{% static 'assets/img/icon/server.svg' %}" alt="cloud">
 									</div>
-									<div class="ht-services__icon-back"> -->
+									<div class="ht-services__icon-back"> --> 
 										<!-- <img src="{% static 'assets/img/icon/server-1a.svg' %}" alt="cloud"> -->
 									<!-- </div>
-								</a> -->
+								</a>
 
-								<!-- <h3 class="ht-services__title"><a href="services-details.html">Single Host</a></h3>
+								<! h3 class="ht-services__title"><a href="services-details.html">Single Host</a></h3>
 								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
 								<a class="ht-services__btn" href="services-details.html">Learn More</a> -->
-							<!-- </div>
-						</div>
-					</div> -->
-				<!-- </div> -->
-			</section>
-			<!-- services__area end -->
-
-			<!-- price__area start -->
-			<section class="price__area pt-140 pb-95 pt-lg-60 pb-lg-30">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="section__title text-center mb-60" data-aos="fade-up" data-aos-delay="100">
-								<h4 class="section__title-sub">Our Pricing</h4>
-								<h2 class="section__title-main">We Offer You Best Pricing</h2>
-							</div>
-						</div>
-					</div>
-					<div class="row justify-content-center">
-						<div class="col-lg-4 col-md-6 mt-lg-4 pt-lg-1" data-aos="fade-up" data-aos-delay="200">
-							<div class="ht-plan mb-30">
-								<div class="ht-plan__header">
-									<div class="ht-plan__icon">
-										<img class="ht-plan__icon-front" src="{% static 'assets/img/icon/startup.svg' %}" alt="icon">
-										<img class="ht-plan__icon-back" src="{% static 'assets/img/icon/startup-1a.svg' %}" alt="icon">
-									</div>
-									<h3 class="ht-plan__header-title">Start</h3>
-									<p class="ht-plan__header-desc">Best Choice for individuals</p>
-									<div class="ht-plan__header-price">
-										<h2 class="price-title">09</h2>
-										<span>$/Month</span>
-									</div>
-								</div>
-								<div class="ht-plan__body mb-35">
-									<ul class="ht-plan__body-feature">
-										<li><a href="#">20 GB Storage Space</a></li>
-										<li><a href="#">10 Domain Support</a></li>
-										<li><a href="#">500 GB Bandwith</a></li>
-										<li><a href="#">100 Email Accounts</a></li>
-										<li><a href="#">24/7 Support</a></li>
-									</ul>
-								</div>
-								<div class="ht-plan__footer">
-									<a class="ht_btn" href="contact.html">GET ACCESS</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-							<div class="ht-plan active mb-30">
-								<div class="ht-plan__header">
-									<div class="ht-plan__icon">
-										<img class="ht-plan__icon-front" src="{% static 'assets/img/icon/line-chart.svg' %}"
-											alt="icon">
-										<img class="ht-plan__icon-back" src="{% static 'assets/img/icon/line-chart-1a.svg' %}"
-											alt="icon">
-									</div>
-									<h3 class="ht-plan__header-title">Business</h3>
-									<p class="ht-plan__header-desc">Best Choice for individuals</p>
-									<div class="ht-plan__header-price">
-										<h2 class="price-title">29</h2>
-										<span>$/Month</span>
-									</div>
-								</div>
-								<div class="ht-plan__body mb-35">
-									<ul class="ht-plan__body-feature">
-										<li><a href="#">20 GB Storage Space</a></li>
-										<li><a href="#">10 Domain Support</a></li>
-										<li><a href="#">500 GB Bandwith</a></li>
-										<li><a href="#">100 Email Accounts</a></li>
-										<li><a href="#">24/7 Support</a></li>
-									</ul>
-								</div>
-								<div class="ht-plan__footer">
-									<a class="ht_btn" href="contact.html">GET ACCESS</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 mt-lg-4 pt-lg-1" data-aos="fade-up" data-aos-delay="200">
-							<div class="ht-plan mb-30">
-								<div class="ht-plan__header">
-									<div class="ht-plan__icon">
-										<img class="ht-plan__icon-front" src="{% static 'assets/img/icon/diamond.svg' %}" alt="icon">
-										<img class="ht-plan__icon-back" src="{% static 'assets/img/icon/diamond-1a.svg' %}" alt="icon">
-									</div>
-									<h3 class="ht-plan__header-title">Premium</h3>
-									<p class="ht-plan__header-desc">Best Choice for individuals</p>
-									<div class="ht-plan__header-price">
-										<h2 class="price-title">349</h2>
-										<span>$/Month</span>
-									</div>
-								</div>
-								<div class="ht-plan__body mb-35">
-									<ul class="ht-plan__body-feature">
-										<li><a href="#">20 GB Storage Space</a></li>
-										<li><a href="#">10 Domain Support</a></li>
-										<li><a href="#">500 GB Bandwith</a></li>
-										<li><a href="#">100 Email Accounts</a></li>
-										<li><a href="#">24/7 Support</a></li>
-									</ul>
-								</div>
-								<div class="ht-plan__footer">
-									<a class="ht_btn" href="contact.html">GET ACCESS</a>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+			<!-- services__area end -->
+
+			<!-- price__area start -->
+			<!-- удлено можно посмотреть в price -->
 			<!-- price__area end -->
 
 			<!-- chose__area start -->
@@ -393,15 +226,15 @@
 					<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
 						<div class="col-xl-6">
 							<div class="section__title text-center mb-60">
-								<h4 class="section__title-sub">Testimonials</h4>
-								<h2 class="section__title-main">What Our Customers Say
-									About Us</h2>
+								<h4 class="section__title-sub">Отзывы</h4>
+								<h2 class="section__title-main">Что наши клиенты говорят о нас</h2>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="testimonial-slider-container">
 					<div class="row testimonial__slider">
+						{% for reviews in reviews %}
 						<div class="col-lg-4">
 							<div class="testimonial__wrapper">
 								<div class="rating">
@@ -411,129 +244,17 @@
 									<a href="#"><i class="fas fa-star"></i></a>
 									<a href="#"><i class="fas fa-star"></i></a>
 								</div>
-								<p>“Interactively matrix transparent "outside the box" thinking through
-									exceptional
-									portals. Quickly evolve standardized value for.”</p>
-								<img class="author__avatar" src="{% static 'assets/img/testimonial/author-1.jpg' %}"
+								<p>{{reviews.description|safe}}</p>
+								<img class="author__avatar" src="{{reviews.image.url}}" width = '80px' height = '80px'
 									alt="autho avatar">
 								<h3 class="author__name">
-									Floyd Miles
+									{{reviews.name}}
 								</h3>
-								<h5 class="author__designation">
-									Medical Assistant
-								</h5>
+								
 							</div>
 						</div>
-						<div class="col-lg-4">
-							<div class="testimonial__wrapper">
-								<div class="rating">
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-								</div>
-								<p>“Interactively matrix transparent "outside the box" thinking through
-									exceptional
-									portals. Quickly evolve standardized value for.”</p>
-								<img class="author__avatar" src="{% static 'assets/img/testimonial/author-1.jpg' %}"
-									alt="autho avatar">
-								<h3 class="author__name">
-									Floyd Miles
-								</h3>
-								<h5 class="author__designation">
-									Medical Assistant
-								</h5>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="testimonial__wrapper">
-								<div class="rating">
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-								</div>
-								<p>“Interactively matrix transparent "outside the box" thinking through
-									exceptional
-									portals. Quickly evolve standardized value for.”</p>
-								<img class="author__avatar" src="{% static 'assets/img/testimonial/author-1.jpg' %}"
-									alt="autho avatar">
-								<h3 class="author__name">
-									Floyd Miles
-								</h3>
-								<h5 class="author__designation">
-									Medical Assistant
-								</h5>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="testimonial__wrapper">
-								<div class="rating">
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-								</div>
-								<p>“Interactively matrix transparent "outside the box" thinking through
-									exceptional
-									portals. Quickly evolve standardized value for.”</p>
-								<img class="author__avatar" src="{% static 'assets/img/testimonial/author-1.jpg' %}"
-									alt="autho avatar">
-								<h3 class="author__name">
-									Floyd Miles
-								</h3>
-								<h5 class="author__designation">
-									Medical Assistant
-								</h5>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="testimonial__wrapper">
-								<div class="rating">
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-								</div>
-								<p>“Interactively matrix transparent "outside the box" thinking through
-									exceptional
-									portals. Quickly evolve standardized value for.”</p>
-								<img class="author__avatar" src="{% static 'assets/img/testimonial/author-1.jpg' %}"
-									alt="autho avatar">
-								<h3 class="author__name">
-									Floyd Miles
-								</h3>
-								<h5 class="author__designation">
-									Medical Assistant
-								</h5>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="testimonial__wrapper">
-								<div class="rating">
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-									<a href="#"><i class="fas fa-star"></i></a>
-								</div>
-								<p>“Interactively matrix transparent "outside the box" thinking through
-									exceptional
-									portals. Quickly evolve standardized value for.”</p>
-								<img class="author__avatar" src="{% static 'assets/img/testimonial/author-1.jpg' %}"
-									alt="autho avatar">
-								<h3 class="author__name">
-									Floyd Miles
-								</h3>
-								<h5 class="author__designation">
-									Medical Assistant
-								</h5>
-							</div>
-						</div>
+						{% endfor %}
+						
 					</div>
 					<div class="pagination-area d-none d-md-inline-block">
 						<div class="next_t1"><i class="bi bi-chevron-left"></i></div>
@@ -544,113 +265,32 @@
 			<!-- testimonial__area end -->
 
 			<!-- blog__area start -->
-			<section class="blog__area pt-150 pb-60 pt-lg-60">
+			<div class="blog__grid__section pt-150 pb-120 pt-lg-120 pb-lg-90">
 				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="section__title text-center mb-60" data-aos="fade-up" data-aos-delay="100">
-								<h4 class="section__title-sub">Latest Blogs</h4>
-								<h2 class="section__title-main">Our Recent Articles</h2>
+					<div class="row align-items-center justify-content-center">
+						{% for news in news %}
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+							<div class="ht-blog-five mb-45">
+								<div class="ht-blog__thumb">
+									<img class="w-100" src="{{news.image.url}}" alt="blog">
+									<div class="ht-blog__date">
+										{{news.created_at}}
+									</div>
+								</div>
+								<div class="ht-blog__content">
+									<h3 class="blog-title mb-3 pb-20"><a href="{% url 'blog_detail' news.id %}">{{news.title}}</a></h3>
+									
+									<div class="ht-blog-btn mt-3 d-none">
+										<a class="ht_black_btn" href="{% url 'blog_detail' news.id %}">Подробнее</a>
+									</div>
+								</div>
 							</div>
 						</div>
+						{% endfor %}
 					</div>
-					<div class="row blog__slider__one">
-						<div class="col-lg-6">
-							<div class="ht-blog">
-								<div class="ht-blog__thumb me-xl-3 pe-xl-1 mb-20">
-									<img class="w-100" src="{% static 'assets/img/blog/blog-1a.jpg' %}" alt="blog">
-									<div class="ht-blog__date">
-										21 Jan, 2023
-									</div>
-								</div>
-								<div class="ht-blog__content mb-20">
-									<div class="ht-blog__meta mt-10">
-										<span><a href="#"><img src="{% static 'assets/img/blog/icon-1a.svg' %}" alt="icon">
-												UXACTION</a></span>
-										<span><a href="#"><img src="{% static 'assets/img/blog/icon-2a.svg' %}" alt="icon">
-												Web
-												Hosting</a></span>
-									</div>
-									<h3 class="blog-title"><a href="blog-details.html">What is meant by
-											domain
-											and
-											hosting?</a></h3>
-									<p>Proactively underwhelm global catal change with standards compliant
-										to
-										the
-										point
-										portals.</p>
-									<div class="ht-blog-btn mt-2">
-										<a class="ht_btn" href="blog-details.html">Learn More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="ht-blog">
-								<div class="ht-blog__thumb me-xl-3 pe-xl-1 mb-20">
-									<img class="w-100" src="{% static 'assets/img/blog/blog-1a.jpg' %}" alt="blog">
-									<div class="ht-blog__date">
-										21 Jan, 2023
-									</div>
-								</div>
-								<div class="ht-blog__content mb-20">
-									<div class="ht-blog__meta mt-10">
-										<span><a href="#"><img src="{% static 'assets/img/blog/icon-1a.svg' %}" alt="icon">
-												UXACTION</a></span>
-										<span><a href="#"><img src="{% static 'assets/img/blog/icon-2a.svg' %}" alt="icon">
-												Web
-												Hosting</a></span>
-									</div>
-									<h3 class="blog-title"><a href="blog-details.html">What is meant by
-											domain
-											and
-											hosting?</a></h3>
-									<p>Proactively underwhelm global catal change with standards compliant
-										to
-										the
-										point
-										portals.</p>
-									<div class="ht-blog-btn mt-2">
-										<a class="ht_btn" href="blog-details.html">Learn More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="ht-blog">
-								<div class="ht-blog__thumb me-xl-3 pe-xl-1 mb-20">
-									<img class="w-100" src="{% static 'assets/img/blog/blog-1a.jpg' %}" alt="blog">
-									<div class="ht-blog__date">
-										21 Jan, 2023
-									</div>
-								</div>
-								<div class="ht-blog__content mb-20">
-									<div class="ht-blog__meta mt-10">
-										<span><a href="#"><img src="{% static 'assets/img/blog/icon-1a.svg' %}" alt="icon">
-												UXACTION</a></span>
-										<span><a href="#"><img src="{% static 'assets/img/blog/icon-2a.svg' %}" alt="icon">
-												Web
-												Hosting</a></span>
-									</div>
-									<h3 class="blog-title"><a href="blog-details.html">What is meant by
-											domain
-											and
-											hosting?</a></h3>
-									<p>Proactively underwhelm global catal change with standards compliant
-										to
-										the
-										point
-										portals.</p>
-									<div class="ht-blog-btn mt-2">
-										<a class="ht_btn" href="blog-details.html">Learn More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 				</div>
-			</section>
+			</div>
 			<!-- blog__area end -->
 
 			<!-- cta__area start -->
@@ -659,10 +299,9 @@
 					<div class="row justify-content-center cta__wrapper pt-75 pb-100">
 						<div class="col-lg-8">
 							<div class="text-center">
-								<h2 class="cta__title" data-aos="fade-up" data-aos-delay="100">Have a project in mind?
-									Let’s get to work.</h2>
-								<a class="ht_btn" href="contact.html" data-aos="fade-up" data-aos-delay="150">Contact
-									Us</a>
+								<h2 class="cta__title" data-aos="fade-up" data-aos-delay="100">
+									Есть проект на примете? Давай приступим к работе.</h2>
+								<a class="ht_btn" href="contact.html" data-aos="fade-up" data-aos-delay="150">Связаться</a>
 								<img class="cta__shape" src="{% static 'assets/img/cta/cta-1a-round.svg' %}" alt="round shape">
 							</div>
 						</div>

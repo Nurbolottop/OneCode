@@ -85,19 +85,9 @@
 											</a>
 											<ul class="sub-menu">
 												<li>
-													<a href="about.html">About Us</a>
+													<a href="{% url 'about' %}">О нас</a>
 												</li>
-												<li><a href="#">Shop <span class="sub-menu-arrow"><i
-																class="bi bi-chevron-down"></i></span></a>
-													<ul class="sub-menu">
-														<li>
-															<a href="product.html">Product</a>
-														</li>
-														<li>
-															<a href="product-details.html">Product Details</a>
-														</li>
-													</ul>
-												</li>
+												
 
 												<li>
 													<a href="#">Команда <span class="sub-menu-arrow"><i
@@ -107,12 +97,12 @@
 															<a href="{% url 'team' %}">Команда</a>
 														</li>
 														<li>
-															<a href="{% url 'team_details' settings.id %}">O команда</a>
+															<a href="{% url 'team_details' settings.id %}">O командe</a>
 														</li>
 													</ul>
 												</li>
 												<li>
-													<a href="{% url 'price' %}">Price</a>
+													<a href="{% url 'price' %}">Цена</a>
 												</li>
 												<li>
 													<a href="{% url 'faq' %}">FAQ</a>
@@ -120,14 +110,12 @@
 												<li>
 													<a href="error.html">Error - 404</a>
 												</li>
-												<li>
-													<a href="login.html">Login</a>
-												</li>
+												
 												<li>
 													<a href="signup.html">Signup</a>
 												</li>
 												<li>
-													<a href="cart.html">Cart</a>
+													<a href="cart.html">Корзина</a>
 												</li>
 												<li>
 													<a href="checkout.html">Checkout</a>
@@ -141,23 +129,7 @@
 											<li>
 												<a href="{% url 'service' %}">Услуги</a>
 											</li>
-										<li>
-											<a href="#">Project</a>
-											<ul class="sub-menu">
-												<li>
-													<a href="project-grid.html">Project
-														Grid</a>
-												</li>
-												<li>
-													<a href="project-masonry.html">Project
-														Masonry</a>
-												</li>
-												<li>
-													<a href="project-details.html">Project
-														Details</a>
-												</li>
-											</ul>
-										</li>
+										
 										<li>
 											<a href="{% url 'blog' %}">Блок</a>
 										</li>
