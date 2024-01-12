@@ -16,6 +16,10 @@ urlpatterns = [
     path('price', views.price, name='price'),
     path('team_details/<int:id>/', views.team_details, name='team_details'),
     path('contact/', views.contact, name='contact'),
+<<<<<<< HEAD
     # path('login/', views.login, name='login')
+=======
+    path('login/', views.login, name='login')
+>>>>>>> 2403084e14633485b35442b6d22ba7ef32bc8b2a
 
 ]
