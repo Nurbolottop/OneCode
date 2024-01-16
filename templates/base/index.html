@@ -69,8 +69,7 @@
 							<div class="about__wrapper ps-xxl-5 mb-30" data-aos="fade-left" data-aos-delay="300">
 								<div class="section__title mb-15">
 									<h4 class="section__title-sub">О нас</h4>
-									<h2 class="section__title-main">{{settings.title}}</h2>
-									<p>{{settings.descriptions_about}}</p>
+									<p>{{settings.descriptions_about|safe}}</p>
 								</div>
 								<!-- <p class="mb-50">Dramatically supply transparent deliverables before caward comp
 									internal.
@@ -98,8 +97,7 @@
 							<div class="col-lg-6">
 								<div class="section__title text-center mb-45">
 									<h4 class="section__title-sub-two mb-20">Партнеры</h4>
-									<h2 class="section__title-main">
-										{{partners.title}}</h2>
+									
 								</div>
 							</div>
 						</div>
@@ -132,9 +130,9 @@
 						</div>
 					</div>
 					<div class="row">
+						{% for service in service %}
 						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
 							<div class="ht-services mb-30">
-						{% for service in service %}
 								<a class="ht-services__icon" href="services-details.html">
 									<div class="ht-services__icon-front">
 										<img src="{% static 'assets/img/icon/cloud.svg' %}" alt="cloud">
@@ -148,12 +146,11 @@
 								
 								<h3 class="ht-services__title"><a href="services-details.html">{{service.title}}</a></h3>
 								<p>{{service.descriptions}}</p>
-								<a class="ht-services__btn" href="services-details.html">Learn More</a>
+								<a class="ht-services__btn" href="services-details.html">Подробнее</a>
 							</div>
 						</div>								
-						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">							
-							<div class="ht-services mb-30">	
-								{% endfor %}							
+						{% endfor %}							
+						
 								<!-- <a class="ht-services__icon" href="services-details.html">
 									
 									<div class="ht-services__icon-front"> 
@@ -167,8 +164,7 @@
 								<! h3 class="ht-services__title"><a href="services-details.html">Single Host</a></h3>
 								<p>Seamlessly whiteboard long high impact and idea redefi ne high experiences.</p>
 								<a class="ht-services__btn" href="services-details.html">Learn More</a> -->
-							</div>
-						</div>
+							
 					</div>
 				</div>
 			</section>
@@ -186,16 +182,13 @@
 							<div class="chose__content-wrapper mb-30">
 								<div class="section__title mb-40 pe-xl-3">
 									<!-- <h4 class="section__title-sub">Why Choose Us</h4> -->
-									<h2 class="section__title-main">{{why.title}}</h2>
-									<p>{{why.descriptions}}</p>
+									<h2 class="section__title-main">{{choose_us.title}}</h2>
+									<p>{{choose_us.descriptions}}</p>
 								</div>
 								<div class="chose__feature">
-									<a href="#"><img src="{% static 'assets/img/icon/setting-1a.svg' %}" alt="Setting">{{why.why_1}}<span class="float-end"><i
-												class="fal fa-arrow-right"></i></span></a>
-									<a href="#"><img src="{% static 'assets/img/icon/graph-1a.svg' %}" alt="Setting"> {{why.why_2}} <span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
-									<a href="#"><img src="{% static 'assets/img/icon/shield-done-1a.svg' %}" alt="Setting">
-										{{why.why_3}} <span class="float-end"><i
-												class="fal fa-arrow-right"></i></span></a>
+									<a href="#"><img src="{% static 'assets/img/icon/setting-1a.svg' %}" alt="Setting">{{choose_us.why_1}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
+									<a href="#"><img src="{% static 'assets/img/icon/graph-1a.svg' %}" alt="Setting"> {{choose_us.why_2}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
+									<a href="#"><img src="{% static 'assets/img/icon/shield-done-1a.svg' %}" alt="Setting">{{choose_us.why_3}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
 								</div>
 							</div>
 						</div>

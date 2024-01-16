@@ -14,7 +14,7 @@ class Settings(models.Model):
         verbose_name="Информационный текст",
         blank=True,null=True
     )
-    descriptions_about = models.TextField(
+    descriptions_about = RichTextField(
         verbose_name="Информационный текст о нас",
         blank=True,null=True
     )
@@ -81,14 +81,12 @@ class Service(models.Model):
         verbose_name = "2) Наша услуга"
         verbose_name_plural = "2) Наши услуги"
 
-class Why(models.Model):
-    
+class ChooseUs(models.Model):
     title =  models.CharField(max_length=50, verbose_name="Заголовок")
     descriptions = models.TextField(verbose_name="Описание")
     why_1 = models.CharField(max_length=100, verbose_name="Почему_1")
     why_2 = models.CharField(max_length=100, verbose_name="Почему_2")
     why_3 = models.CharField(max_length=100, verbose_name="Почему_3")
-    why_4 = models.CharField(max_length=100, verbose_name="Почему_4")
 
 
     def __str__(self):
@@ -192,3 +190,4 @@ class Video(models.Model):
     class Meta:
         verbose_name = '6) Видео'
         verbose_name_plural = '6) Видео'
+

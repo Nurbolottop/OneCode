@@ -67,5 +67,17 @@ class Contact(models.Model):
     class Meta:
         verbose_name='4) Контакт'
         verbose_name_plural='4) Контакты'
+
+class Subscriber(models.Model):
+    email = models.EmailField(
+        verbose_name = "Почта пользователя"
+    )
+    subscribed_at = models.DateTimeField(auto_now_add=True,verbose_name = "Дата подписки") 
+    def __str__(self):
+        return f"{self.email} - {self.subscribed_at}"
+    
+    class Meta:
+        verbose_name = "3) Пользователи для рассылки"
+        verbose_name_plural = "3) Пользователи для рассылки"
         
 ################################################################################################################################################################################

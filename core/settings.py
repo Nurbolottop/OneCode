@@ -129,10 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Или любой другой путь, где вы хотите собирать статические файлы
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),  # Если у вас есть дополнительные статические файлы для вашего приложения
-# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Или любой другой путь, где вы хотите собирать статические файлы
+STATICFILES_DIRS =[
+    os.path.join(BASE_DIR, 'static'),  # Если у вас есть дополнительные статические файлы для вашего приложения
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -204,6 +204,7 @@ EMAIL_HOST_USER = 'nuraj9663@gmail.com'
 EMAIL_HOST_PASSWORD = 'ваш пароль'
 
 
+
 # Ckeditor
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'  # URL to jQuery
@@ -221,3 +222,5 @@ EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
 EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
 EMAIL_HOST_USER = 'bullabratan@gmail.com'
 EMAIL_HOST_PASSWORD = 'spoc twnz dgex hjxr'
+
+

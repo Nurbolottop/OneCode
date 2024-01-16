@@ -160,10 +160,6 @@ class Faq(models.Model):
 
 
 class Partners(models.Model):
-    title = models.CharField(
-        max_length = 255,
-        verbose_name = 'Заголовок'
-    )
     image = ResizedImageField(
         force_format="WEBP", 
         quality=100, 

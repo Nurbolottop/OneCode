@@ -27,12 +27,12 @@
 					<div class="row align-items-center">
 						<div class="col-xl-4 col-lg-5">
 							<div class="page-title-wrapper text-lg-start text-center mb-40">
-								<h2 class="page-title mb-10">Вся команда</h2>
+								<h2 class="page-title mb-10">{{details.name}}</h2>
 								<div class="page-title-border mt-1 mb-10"></div>
 								<nav aria-label="breadcrumb">
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="{% url 'index' %}">Главная</a></li>
-										<li class="active" aria-current="page">Вся команда</li>
+										<li class="active" aria-current="page">{{details.name}}</li>
 									</ul>
 								</nav>
 							</div>
@@ -61,7 +61,7 @@
 							</div>
 							<div class="col-xl-6">
 								<div class="team__details__content mb-30">
-									<h3 class="team__name mb-15">{{team.name}}</h3>
+									<h3 class="team__name mb-15">{{details.name}}</h3>
 									<div class="team__tags mb-25">
 										
 			

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User,Group
 ################################################################################################################################################################################
 
 from apps.base import models 
-from apps.base.models import Service, Why
+from apps.base.models import Service, ChooseUs
 
 # Register your models here.
 class SettingsPhoneInline(admin.TabularInline):
@@ -38,7 +38,7 @@ admin.site.register(models.Review)
 admin.site.register(models.Team, TeamFilterAdmin)
 admin.site.register(models.Settings, SettingsFilterAdmin)
 admin.site.register(Service)
-admin.site.register(Why)
+admin.site.register(ChooseUs)
 ################################################################################################################################################################################
 
 admin.site.unregister(User)

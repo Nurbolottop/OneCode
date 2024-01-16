@@ -8,15 +8,17 @@
                 </div>
             </div>
             <div class="col-lg-5 ps-lg-0">
-                <form class="subscribe__form mb-30">
-                    <input type="text" placeholder="Ваша почта...">
-                    <button class="ht_btn submit-btn">ПОДПИСАТЬСЯ</button>
+                <form class="subscribe__form mb-30" method="POST">
+                  {% csrf_token %}
+                    <input type="text" name="email" placeholder="Ваша почта...">
+                    <button name = "newslater" class="ht_btn submit-btn">ПОДПИСАТЬСЯ</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+         
 
 <!--    <div
             class="widget widget-newsletter wow fadeInLeft"
