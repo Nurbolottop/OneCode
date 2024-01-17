@@ -12,16 +12,19 @@ from apps.contacts.models import BlogContact,ServiceContact, Contact, Subscriber
 # Create your views here.
 def index(request):
 #Base----------------------------------------------------------
+    title = "Главная "
     settings = Settings.objects.latest("id")
     reviews = Review.objects.all()
     service = Service.objects.all()
     partners = models.Partners.objects.all()  
     choose_us = ChooseUs.objects.latest('id')  
 
+   
     
     return render(request,'base/index.html', locals())
 
 def team(request):
+    title = "Команда"
     team = Team.objects.all()
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
@@ -41,6 +44,10 @@ def team(request):
     return render(request, 'base/team.html', locals())
 
 def about(request):
+    choose_us = ChooseUs.objects.latest('id') 
+    partners = models.Partners.objects.all()
+    title = "О нас"
+
     function =  models.Function.objects.latest('id')
 
     settings = Settings.objects.latest("id")
@@ -63,6 +70,7 @@ def about(request):
     
 #Secondary----------------------------------------------------------
 def blog(request):
+    title = "Новости"
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
     all_news = models.News.objects.all()
@@ -102,6 +110,7 @@ def blog(request):
     return render(request, 'secondary/blog.html', locals())
     
 def blog_detail(request, id):
+    title = "Новости подробнее"
     news_blog = models.News.objects.get(id=id)
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
@@ -135,14 +144,32 @@ def blog_detail(request, id):
         )
     return render(request, 'secondary/blog_detail.html', locals())
 
+
 def faq(request):
-    faq = models.Faq.objects.all()
+    title = "Частые вопросы"
+    faq = models.Faq.objects.first()  # Assuming you have only one FAQ instance
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
-    function =  models.Function.objects.latest('id')
-
+    function = models.Function.objects.latest('id')
 
     if request.method == 'POST':
+        if 'faq_form' in request.POST:
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            user_comment = request.POST.get('message')
+
+            existing_question = models.Question.objects.filter(name=name, email=email).first()
+            if existing_question:
+                # Update the existing question
+                existing_question.comment = user_comment
+                existing_question.save()
+                faq.comments.add(existing_question)
+            else:
+                new_comment = models.Question(name=name, email=email, comment=user_comment)
+                new_comment.save()
+
+                faq.comments.add(new_comment)
+
         if "newslater" in request.POST:
             email = request.POST.get('email') 
             subscribe = Subscriber.objects.create(email = email)
@@ -157,6 +184,8 @@ def faq(request):
     return render(request, 'secondary/faq.html', locals())
 
 def service(request):
+    title = "Услуги"
+
     settings = Settings.objects.latest("id")
     # services = Service.objects.all()
 
@@ -175,6 +204,7 @@ def service(request):
     return render(request, 'service/service-1.html', locals())
 
 def service_detail(request, id):
+    title = "Услуги побробнее"
     # service = Service.objects.get(id=id)    
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
@@ -200,6 +230,7 @@ def service_detail(request, id):
 
 
 def price(request):
+    title = "Цены"
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
     function =  models.Function.objects.latest('id')
@@ -223,6 +254,7 @@ def price(request):
 
 
 def team_details(request, id):
+    title = "Команды"
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
     function =  models.Function.objects.latest('id')
@@ -245,6 +277,7 @@ def team_details(request, id):
 #Contacts ----------------------------------------------------------
 
 def contact(request):
+    title = "Контакты"
     settings = Settings.objects.latest("id")
     
     if request.method == 'POST':

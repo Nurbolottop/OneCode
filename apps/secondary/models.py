@@ -50,18 +50,11 @@ class News(models.Model):
     letter = RichTextField(
         verbose_name = '2) Описание комментария'
     )
-    threats = RichTextField(
-        verbose_name = '3) Описание киберугроз'
-    )
     video = models.URLField(
         verbose_name = 'Видео URL'
     )
-    threats_descriptions =RichTextField(
-        verbose_name = '4) Описание threats'
-    )
-    conclution = RichTextField(
-        verbose_name = '4) Описнаие Заключение'
-    )
+   
+    
 
     def __str__(self):
         return self.title
@@ -110,21 +103,7 @@ class Function(models.Model):
 
 
     
-class Faq(models.Model):
-    question = models.CharField(
-        max_length = 255,
-        verbose_name = 'Вопросы'
-    )
-    answer = models.TextField(
-        verbose_name = 'Ответы'
-    )
 
-    def __str__(self):
-        return self.question
-    
-    class Meta:
-        verbose_name = '4) Частый вопрос'
-        verbose_name_plural = '4) Частые вопросы'
 
 #  пока не надо деди
 # class GoodPrice(models.Model):
@@ -171,3 +150,33 @@ class Partners(models.Model):
     class Meta:
         verbose_name = '5) Партнер'
         verbose_name_plural = '5) Партнеры'
+
+
+class Question(models.Model):
+    name = models.CharField(
+        max_length = 255,
+        verbose_name = 'Имя' 
+    ) 
+    email = models.EmailField(
+        verbose_name = 'Почта'
+    )
+    comment = models.TextField(
+        verbose_name = 'Комментарий'
+    )
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Вопрос'
+        verbose_name_plural = 'Вопросы'
+
+class Faq(models.Model):
+    comments = models.ManyToManyField(Question, related_name='faq_comments', verbose_name='Комментарии к FAQ')
+
+    def __str__(self):
+        return f"FAQ #{self.pk}"
+
+    class Meta:
+        verbose_name = '4) Частый вопрос'
+        verbose_name_plural = '4) Частые вопросы'

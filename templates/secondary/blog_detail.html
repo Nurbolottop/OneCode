@@ -27,13 +27,14 @@
 					<div class="row align-items-center">
 						<div class="col-xl-4 col-lg-5">
 							<div class="page-title-wrapper text-lg-start text-center mb-40">
-								<h2 class="page-title mb-10">Детальный</h2>
+								<h2 class="page-title mb-10">{{news_blog.title}}</h2>
 								<div class="page-title-border mt-1 mb-10"></div>
 								<nav aria-label="breadcrumb">
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="{% url 'index' %}">Главная</a></li>
 										
-										<li class="active" aria-current="page">Детальный</li>
+										<li class="active" aria-current="page">Новости
+										</li>
 									</ul>
 								</nav>
 							</div>
@@ -73,16 +74,13 @@
 									</blockquote>
 									
 								</figure>
-								<h3 class="semi__title mt-50 mb-20">
-									01. Распространенные типы киберугроз</h3>
-								<p>{{news_blog.threats|safe}}</p>
+								
 								
 								<div class="blog__details__video mb-20">
 									<img class="blog__video__bg w-100" src="{{news_blog.image.url}}" alt="blog">
 									<a class="popup-video" href="{{news_blog.video}}"><i
 											class="bi bi-play-fill"></i></a>
 								</div>
-								<p>{{news_blog.threats_descriptions|safe}}</p>
 							</div>
 						</div>
 						<div class="col-xl-4 col-lg-4">
@@ -115,19 +113,7 @@
 									
 									{% endfor %}
 								</div>
-								<div class="widget widget-categories-list">
-									<div class="widget-title-box mb-20">
-										<h4 class="widget__title__three">Categories</h4>
-									</div>
-									<ul class="list-none service-widget">
-										<li><a href="#">Web Hosting <span class="float-end">(15)</span></a></li>
-										<li><a href="#">VPS Hosting <span class="float-end">(25)</span></a></li>
-										<li><a href="#">Dedicated Hosting <span class="float-end">(57)</span></a></li>
-										<li><a href="#">Single Hosting <span class="float-end">(31)</span></a></li>
-										<li><a href="#">Cloud Hosting <span class="float-end">(17)</span></a>
-										</li>
-									</ul>
-								</div>
+								
 								<div class="widget-form mt-60 mb-50">
 									<h3 class="widget__title__three text-white mb-15">Контакты</h3>
 									<p class="mb-40">Совместно разрабатывайте перспективные задачи с помощью прозрачных технологий.</p>

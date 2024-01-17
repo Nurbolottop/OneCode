@@ -46,7 +46,7 @@
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="{% url 'index' %}">Главная</a></li>
 										
-										<li class="active" aria-current="page">{{slide.title}}</li>
+										<li class="active" aria-current="page">Подробнее</li>
 									</ul>
 								</nav>
 							</div>
@@ -76,7 +76,7 @@
 									</div>
 								</div>
 								<div class="ht-blog__content">
-									<h3 class="blog-title mb-3 pb-20"><a href="{% url 'blog_detail' news.id %}">{{news.title}}</a></h3>
+									<h3 class="blog-title mb-3 pb-20"><a href="{% url 'blog_detail' news.id %}">{{news.title|truncatechars:12}}</a></h3>
 									
 									<div class="ht-blog-btn mt-3 d-none">
 										<a class="ht_black_btn" href="{% url 'blog_detail' news.id %}">Подробнее</a>

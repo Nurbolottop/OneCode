@@ -61,7 +61,6 @@
 								</div>
 								<h4 class="ht-feature-title mb-20">{{function.name1}}</h4>
 								<p>{{function.descriptions1}}</p>
-								<a class="ht_btn_two" href="#"><i class="bi bi-arrow-up-right"></i></a>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
@@ -72,7 +71,6 @@
 								</div>
 								<h4 class="ht-feature-title mb-20">{{function.name2}}</h4>
 								<p>{{function.descriptions2}}</p>
-								<a class="ht_btn_two" href="#"><i class="bi bi-arrow-up-right"></i></a>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -83,7 +81,6 @@
 								</div>
 								<h4 class="ht-feature-title mb-20">{{function.name3}}</h4>
 								<p>{{function.descriptions3}}</p>
-								<a class="ht_btn_two" href="#"><i class="bi bi-arrow-up-right"></i></a>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
@@ -94,12 +91,13 @@
 								</div>
 								<h4 class="ht-feature-title mb-20">{{function.name4}}</h4>
 								<p>{{function.descriptions4}}</p>
-								<a class="ht_btn_two" href="#"><i class="bi bi-arrow-up-right"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			
 			<!--feature__section end-->
 
 			<!-- faq__area start -->
@@ -119,31 +117,45 @@
 						<div class="col-lg-10 px-xl-0">
 							<div class="faq-que-list faq-que-three mb-40">
 								<div class="accordion accordion-one" id="accordionThree">
-									{% for faq in faq %}
-									<div class="accordion-item">
-										<h2 class="accordion-header" id="headingSix">
-											<button class="accordion-button" type="button" data-bs-toggle="collapse"
-												data-bs-target="#collapseSix" aria-expanded="true"
-												aria-controls="collapseSix">{{faq.question}}
-										</h2>
-										<div id="collapseSix" class="accordion-collapse collapse show"
-											aria-labelledby="headingSix" data-bs-parent="#accordionThree">
-											<div class="accordion-body">
-												<p>{{faq.answer}}</p>
+									{% for comment in faq.comments.all %}
+										<div class="accordion-item">
+											<h2 class="accordion-header" id="heading{{ comment.id }}">
+												<button class="accordion-button" type="button" data-bs-toggle="collapse"
+														data-bs-target="#collapse{{ comment.id }}" aria-expanded="true"
+														aria-controls="collapse{{ comment.id }}">
+													{{ comment.name }}
+												</button>
+											</h2>
+											<div id="collapse{{ comment.id }}" class="accordion-collapse collapse show"
+												 aria-labelledby="heading{{ comment.id }}" data-bs-parent="#accordionThree">
+												<div class="accordion-body">
+													<p>{{ comment.comment }}</p>
+												</div>
 											</div>
 										</div>
-									</div>
 									{% endfor %}
+								</div>
 							</div>
 							<div class="faq__btn text-center mb-30" data-aos="fade-up" data-aos-delay="250">
-								<a class="ht_btn" href="{% url 'contact' %}">Задать вопрос</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!-- faq__area end -->
-
+			<div class="widget-form mt-60 mb-50">
+				<h3 class="widget__title__three text-white mb-15">Задайте интересующийся вас вопрос</h3>
+				<p class="mb-40">	</p>
+				<form action="{% url 'faq' %}" method="POST">
+					{% csrf_token %}
+					<input name="name" type="text" placeholder="Ваше имя">
+					<input name="email" type="email" placeholder="Почта">
+					<textarea name="message" placeholder="Сообщение" spellcheck="false"></textarea>
+					<button type="submit" name="faq_form" class="widget-btn mt-20">
+					  Опубликовать
+					</button>
+				</form>
+			</div>
 			<!-- cta__area__two start -->
 			<div class="cta__area pb-150 pb-xs-100">
 				<div class="container">
@@ -151,7 +163,7 @@
 						<div class="col-xl-10">
 							<div class="cta__wrapper text-center pt-80 pb-100">
 								<h2 class="cta__title__three mb-35" data-aos="fade-up" data-aos-delay="100">Есть проект на примете? Давай приступим к работе.</h2>
-								<a class="ht_btn" href="contact.html" data-aos="fade-up" data-aos-delay="150">Связаться
+								<a class="ht_btn" href="{% url 'contact' %}" data-aos="fade-up" data-aos-delay="150">Связаться
 									</a>
 								<img class="img-fluid cta__bubble" src="{% static 'assets/img/shape/round-1.svg' %}" alt="shape">
 								<div class="cta__divider"></div>

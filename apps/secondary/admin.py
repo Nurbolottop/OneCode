@@ -20,16 +20,13 @@ class FunctionFilterAdmin(admin.ModelAdmin):
     list_display = ('name1', )
     search_fields = ('name1', )
 
-class FaqFilterAdmin(admin.ModelAdmin):
-    list_filter = ('question', )
-    list_display = ('question','answer' )
-    search_fields = ('question', 'answer')
 
 
 
 
+admin.site.register(models.Question)
 admin.site.register(models.Partners)
-admin.site.register(models.Faq, FaqFilterAdmin)
+admin.site.register(models.Faq)
 admin.site.register(models.Function, FunctionFilterAdmin)
 admin.site.register(models.News, NewsFilterAdmin)
 admin.site.register(models.Slide, SlideFilterAdmin)
