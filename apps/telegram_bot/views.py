@@ -3,7 +3,7 @@ from telebot import TeleBot, types
 from .models import TelegramUser
 
 # Create your views here.
-TELEGRAM_TOKEN = "6498515686:AAGr6KB6TybWTPDf7NNvTHYYHS46_hoy690"
+TELEGRAM_TOKEN = "6971448413:AAEzbLi_Ak4CpsAc40MPGOyI2E--Rrn7nTE"
 ADMIN_ID = "1865986015"
 
 bot = TeleBot(TELEGRAM_TOKEN, threaded=False)

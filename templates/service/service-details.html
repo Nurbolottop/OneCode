@@ -25,13 +25,13 @@
 					<div class="row align-items-center">
 						<div class="col-xl-4 col-lg-5">
 							<div class="page-title-wrapper text-lg-start text-center mb-40">
-								<h2 class="page-title mb-10">Детальный</h2>
+								<h2 class="page-title mb-10">{{services.title}}</h2>
 								<div class="page-title-border mt-1 mb-10"></div>
 								<nav aria-label="breadcrumb">
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="{%url 'index'%}">Главный</a></li>
 										{% comment %} <li><a href="#">Pages</a></li> {% endcomment %}
-										<li class="active" aria-current="page">Детальный</li>
+										<li class="active" aria-current="page">{{service.title}}</li>
 									</ul>
 								</nav>
 							</div>
@@ -54,12 +54,12 @@
 					<div class="row">
 						<div class="col-lg-8 pe-xxl-5">
 							<div class="service__details__content mb-60">
-								<h2 class="section__title-main">{{service.title}}</h2>
-								<p>{{service.descriptions}}</p>
+								<h2 class="section__title-main">{{services.title}}</h2>
+								<p>{{services.descriptions|safe}}</p>
 								<div class="service__img__box mb-30">
-									<img class="img-fluid" src="{{service.image2.url}}" alt="service">
+									<img class="img-fluid" src="{{services.image.url}}" alt="service">
 								</div>
-								<p>{{service.descriptions2|safe}}</p>
+								{% comment %} <p>{{service.descriptions}}</p> {% endcomment %}
 
 								<div class="row align-items-center">
 									<div class="col-lg-4 col-md-4">
@@ -70,7 +70,7 @@
 									<div class="col-lg-4 col-md-4">
 										<div class="service__video text-center mb-30">
 											<img class="w-100" src="{% static 'assets/img/service/service-3a.jpg' %}" alt="service">
-											<a class="popup-video" href="{{service.video}}"><i
+											<a class="popup-video" href="{{services.video}}"><i
 													class="bi bi-play-fill"></i></a>
 										</div>
 									</div>
@@ -81,51 +81,51 @@
 									</div>
 								</div>
 								<ul class="text-list-two list-none">
-									<li>Collaboratively engineer prospective imperatives with transparent technology.
+									{% comment %} <li>Collaboratively engineer prospective imperatives with transparent technology.
 									</li>
 									<li>Phosfluorescently morph excellent materials for multifunctional collaboration
 										idea.</li>
 									<li>Conveniently cultivate compelling processes before client-centered networks.
-									</li>
+									</li> {% endcomment %}
 								</ul>
-								<h3 class="semi__title mb-25 mt-60">Our Specialized</h3>
+								{% comment %} <h3 class="semi__title mb-25 mt-60"></h3>
 								<p>Quickly integrate client-centered users through vertical data. Holisticly repurpose
 									interactive expertise after distinctive resources. Collaboratively engineer
-									prospective imperatives with transparent .</p>
+									prospective imperatives with transparent .</p> {% endcomment %}
 								<div class="row gx-lg-2 progressbar-wrapper mb-1">
 									<div class="col-lg-3 col-sm-6">
-										<div class="progressbar__content text-center mb-45">
+										{% comment %} <div class="progressbar__content text-center mb-45">
 											<div class="chart" data-percent="80"><span>80%</span></div>
 											<h4 class="progress__title">Web Security</h4>
-										</div>
+										</div> {% endcomment %}
 									</div>
 									<div class="col-lg-3 col-sm-6">
-										<div class="progressbar__content text-center mb-45">
+										{% comment %} <div class="progressbar__content text-center mb-45">
 											<div class="chart" data-percent="80"><span>80%</span></div>
 											<h4 class="progress__title">Privacy & Policy</h4>
-										</div>
+										</div> {% endcomment %}
 									</div>
 									<div class="col-lg-3 col-sm-6">
-										<div class="progressbar__content text-center mb-45">
+										{% comment %} <div class="progressbar__content text-center mb-45">
 											<div class="chart" data-percent="88"><span>88%</span></div>
 											<h4 class="progress__title">Data Security</h4>
-										</div>
+										</div> {% endcomment %}
 									</div>
 									<div class="col-lg-3 col-sm-6">
-										<div class="progressbar__content text-center mb-45">
+										{% comment %} <div class="progressbar__content text-center mb-45">
 											<div class="chart" data-percent="95"><span>95%</span></div>
 											<h4 class="progress__title">Host Solution</h4>
-										</div>
+										</div> {% endcomment %}
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 ps-lg-0">
 							<div class="widget-right-section mb-40">
-								<ul class="list-none category-widget">
-									<li><a href="#">Industrial Automation <span class="float-end"><i
-													class="bi bi-arrow-right-short"></i></span></a></li>
-									<li><a href="#">Manufacturing System <span class="float-end"><i
+								 <ul class="list-none category-widget">
+									{% comment %} <li><a href="#">Industrial Automation <span class="float-end"><i
+													class="bi bi-arrow-right-short"></i></span></a></li> {% endcomment %}
+									{% comment %} <li><a href="#">Manufacturing System <span class="float-end"><i
 													class="bi bi-arrow-right-short"></i></span></a></li>
 									<li><a href="#">Oil and Gas Refinery <span class="float-end"><i
 													class="bi bi-arrow-right-short"></i></span></a></li>
@@ -135,12 +135,13 @@
 													class="bi bi-arrow-right-short"></i></span></a>
 									</li>
 									<li><a href="#">Lean Manufacturing <span class="float-end"><i
-													class="bi bi-arrow-right-short"></i></span></a></li>
-								</ul>
+													class="bi bi-arrow-right-short"></i></span></a></li> {% endcomment %}
+								</ul> 
 								<div class="grey-bg widget-form mt-60">
-									<h3 class="widget__title__two mb-15">Contact Us</h3>
-									<p class="mb-40">Collaboratively engineer prospective
-										imperatives with transparent technology.</p>
+									<h3 class="widget__title__two mb-15">
+										Связаться с нами</h3>
+									{% comment %} <p class="mb-40">Collaboratively engineer prospective
+										imperatives with transparent technology.</p> {% endcomment %}
 										<form action="#" method="POST">
 											{% csrf_token %}
 											<input name="name" type="text" placeholder="Ваше имя">
