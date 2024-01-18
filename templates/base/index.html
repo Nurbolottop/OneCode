@@ -133,7 +133,7 @@
 						{% for service in service %}
 						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
 							<div class="ht-services mb-30">
-								<a class="ht-services__icon" href="services-details.html">
+								<a class="ht-services__icon" href="{% url 'service_detail' service.id%}">
 									<div class="ht-services__icon-front">
 										<img src="{% static 'assets/img/icon/cloud.svg' %}" alt="cloud">
 									</div>
@@ -144,9 +144,9 @@
 									</div>
 								</a>
 								
-								<h3 class="ht-services__title"><a href="services-details.html">{{service.title}}</a></h3>
+								<h3 class="ht-services__title"><a href="{% url 'service_detail' service.id%}">{{service.title}}</a></h3>
 								<p>{{service.descriptions}}</p>
-								<a class="ht-services__btn" href="services-details.html">Подробнее</a>
+								<a class="ht-services__btn" href="{% url 'service_detail' service.id%}">Подробнее</a>
 							</div>
 						</div>								
 						{% endfor %}							

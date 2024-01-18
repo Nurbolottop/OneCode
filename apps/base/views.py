@@ -185,7 +185,7 @@ def faq(request):
 
 def service(request):
     title = "Услуги"
-
+    services = Service.objects.all() 
     settings = Settings.objects.latest("id")
     # services = Service.objects.all()
 

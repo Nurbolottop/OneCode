@@ -53,25 +53,7 @@
 			<!--page-title-area end-->
 
 			<!--feature__section start-->
-			<div class="feature__section pt-150 pt-lg-100 pb-120 pb-lg-30">
-				<div class="container">
-					<div class="row">
-						{% for service in services %}
-						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-							<div class="ht__feature__two text-center mb-30 mt-35"
-								data-background="{% static 'assets/img/shape/feature-bg-shape-1a.png' %}">
-								<div class="ht__feature-icon">
-									<img src="{{service.image.url}}" alt="chose">
-								</div>
-								<h4 class="ht-feature-title mb-20">{{service.title}}</h4>
-								<p>{{service.descriptions|truncatewords:7}}</p>
-								<a class="ht_btn_two" href="{%url 'service_detail' service.id%}"><i class="bi bi-arrow-up-right"></i></a>
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
+			
 			<!--feature__section end-->
 
 			<!-- services__area start -->
@@ -91,12 +73,12 @@
 						{% for service in services %}
 						<div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
 							<div class="ht-services mb-30">
-							<a class="ht-services__icon" href="{%url 'service_detail' service.id%}">
+							<a class="ht-services__icon" href="{% url 'service_detail' service.id %}">
 									<div class="ht-services__icon-front">
 										<img src="{% static 'assets/img/icon/cloud.svg' %}" alt="cloud">
 									</div>
 									<div class="ht-services__icon-back">
-										<img src="{{service.image.url}}" alt="cloud">
+										<img src="{{ service.image.url}}" alt="cloud">
 									</div>
 								</a>
 					

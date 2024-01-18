@@ -73,6 +73,7 @@ class SettingsPhone(models.Model):
 class Service(models.Model):
     title =  models.CharField(max_length=255, verbose_name="Заголовок")
     descriptions = models.TextField(verbose_name="Описание")
+    image = ResizedImageField(verbose_name='Фотография', blank=True, null=True)
 
     def __str__(self):
         return self.title

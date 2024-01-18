@@ -168,8 +168,8 @@ class Question(models.Model):
         return self.name
     
     class Meta:
-        verbose_name = 'Вопрос'
-        verbose_name_plural = 'Вопросы'
+        verbose_name = '6) Вопрос'
+        verbose_name_plural = '6) Вопросы'
 
 class Faq(models.Model):
     comments = models.ManyToManyField(Question, related_name='faq_comments', verbose_name='Комментарии к FAQ')
