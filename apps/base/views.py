@@ -200,7 +200,6 @@ def faq(request):
             Почта пользователя: {email} 
             """)
 
-    return render(request, 'secondary/blog.html', locals())
     
             
     return render(request, 'secondary/faq.html', locals())
