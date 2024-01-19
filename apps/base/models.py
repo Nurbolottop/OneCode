@@ -14,10 +14,7 @@ class Settings(models.Model):
         verbose_name="Информационный текст",
         blank=True,null=True
     )
-    descriptions_about = RichTextField(
-        verbose_name="Информационный текст о нас",
-        blank=True,null=True
-    )
+    
     logo = ResizedImageField(
         force_format="WEBP", 
         quality=100, 
@@ -58,6 +55,31 @@ class Settings(models.Model):
             verbose_name = "1) Основная настройка"
             verbose_name_plural = "1) Основные настройки"
 
+class About(models.Model):
+    descriptions_about = RichTextField(
+        verbose_name="Информационный текст о нас",
+        blank=True,null=True
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='image_about/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    image2 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='image_about2/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    def __str__(self):
+        return self.descriptions_about
+    
+    class Meta:
+        verbose_name = '7) О нас'
+        verbose_name_plural = '7) О нас'
 
 class SettingsPhone(models.Model):
     settings = models.ForeignKey(Settings, related_name='phone_title', on_delete=models.CASCADE)

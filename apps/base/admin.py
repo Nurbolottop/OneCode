@@ -32,7 +32,7 @@ class ReviewFilterAdmin(admin.ModelAdmin):
 ################################################################################################################################################################################
 
 
-
+admin.site.register(models.About)
 admin.site.register(models.Video)
 admin.site.register(models.Review)
 admin.site.register(models.Team, TeamFilterAdmin)

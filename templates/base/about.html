@@ -177,11 +177,11 @@
 									<p>{{choose_us.descriptions}}</p>
 								</div>
 								<ul class="chose__feature__two">
-									<li><a href="#"><span><img src="{% static 'assets/img/icon/setting-3b.svg' %}"
+									<li><a href="{% url 'contact' %}"><span><img src="{% static 'assets/img/icon/setting-3b.svg' %}"
 													alt="Setting"></span> {{choose_us.why_1}}</a></li>
-									<li><a href="#"><span><img src="{% static 'assets/img/icon/graph-5c.svg' %}" alt="Setting"></span>
+									<li><a href="{% url 'service' %}"><span><img src="{% static 'assets/img/icon/graph-5c.svg' %}" alt="Setting"></span>
 										{{choose_us.why_2}}</a></li>
-									<li><a href="#"><span><img src="{% static 'assets/img/icon/shield-done-2a.svg' %}"
+									<li><a href="{% url 'about' %}"><span><img src="{% static 'assets/img/icon/shield-done-2a.svg' %}"
 													alt="Setting"></span>
 													{{choose_us.why_3}}</a></li>
 									
@@ -193,7 +193,7 @@
 							<img class="shapes shapes__1" src="{% static 'assets/img/shape/ht-star-2b.svg' %}" alt="Shape">
 							<img class="shapes shapes__2" src="{% static 'assets/img/shape/ht-star-2b.svg' %}" alt="Shape">
 							<img class="shapes shapes__3" src="{% static 'assets/img/shape/ht-star-2b.svg' %}" alt="Shape">
-							<img src="{% static 'assets/img/chose/ch-ilus-main-3b.png' %} " alt="ilustration"
+							<img src="{{ about.image2.url }} " alt="ilustration"
 								class="chose__img-ilus img-fluid">
 						</div>
 					</div>
@@ -229,10 +229,10 @@
 						</div>
 					</div>
 					<div class="row">
-						{% for team in team %}
+						{% for team in team|slice:":3"  %}
 						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
 							<div class="teams__style__one style__2 mb-80">
-								<div class="teams__thumb">
+								<div clxass="teams__thumb">
 									<img class="w-100" src="{{team.image.url}}" alt="team">
 								</div>
 								<div class="teams__content">

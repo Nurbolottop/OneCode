@@ -55,7 +55,7 @@
 					<div class="row align-items-center">
 						<div class="col-xl-7 col-lg-6">
 							<div class="about__img position-relative mb-30">
-								<img src="{% static 'assets/img/about/about-ilus-1a.png' %}" alt="Main" class="about__main">
+								<img src="{{about.image.url}}" alt="Main" class="about__main">
 								<div class="about__shapes-one"></div>
 								<img class="about__shapes-two" src="{% static 'assets/img/shape/ab-star-1a.svg' %}"
 									alt="About Shape Two">
@@ -69,7 +69,7 @@
 							<div class="about__wrapper ps-xxl-5 mb-30" data-aos="fade-left" data-aos-delay="300">
 								<div class="section__title mb-15">
 									<h4 class="section__title-sub">О нас</h4>
-									<p>{{settings.descriptions_about|safe}}</p>
+									<p>{{about.descriptions_about|safe}}</p>
 								</div>
 								<!-- <p class="mb-50">Dramatically supply transparent deliverables before caward comp
 									internal.
@@ -186,9 +186,9 @@
 									<p>{{choose_us.descriptions}}</p>
 								</div>
 								<div class="chose__feature">
-									<a href="#"><img src="{% static 'assets/img/icon/setting-1a.svg' %}" alt="Setting">{{choose_us.why_1}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
-									<a href="#"><img src="{% static 'assets/img/icon/graph-1a.svg' %}" alt="Setting"> {{choose_us.why_2}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
-									<a href="#"><img src="{% static 'assets/img/icon/shield-done-1a.svg' %}" alt="Setting">{{choose_us.why_3}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
+									<a href="{% url 'contact' %}"><img src="{% static 'assets/img/icon/setting-1a.svg' %}" alt="Setting">{{choose_us.why_1}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
+									<a href="{% url 'service' %}"><img src="{% static 'assets/img/icon/graph-1a.svg' %}" alt="Setting"> {{choose_us.why_2}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
+									<a href="{% url 'about' %}"><img src="{% static 'assets/img/icon/shield-done-1a.svg' %}" alt="Setting">{{choose_us.why_3}}<span class="float-end"><i class="fal fa-arrow-right"></i></span></a>
 								</div>
 							</div>
 						</div>

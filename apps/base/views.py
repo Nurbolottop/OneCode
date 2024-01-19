@@ -2,17 +2,18 @@ from django.shortcuts import render,redirect
 
 ################################################################################################################################################################################
 
-from apps.base.models import Settings, Team, Review, Service, ChooseUs
+from apps.base.models import Settings, Team, Review, Service, ChooseUs, About, Video
 from apps.secondary import models
 from apps.telegram_bot.views import get_text
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from apps.contacts.models import BlogContact,ServiceContact, Contact, Subscriber
 # from apps.products.models import Service
-\
+
 # Create your views here.
 def index(request):
 #Base----------------------------------------------------------
     title = "Главная "
+    about = About.objects.latest('id')
     settings = Settings.objects.latest("id")
     reviews = Review.objects.all()
     service = Service.objects.all()
@@ -44,6 +45,9 @@ def team(request):
     return render(request, 'base/team.html', locals())
 
 def about(request):
+    team = Team.objects.all()
+    video = Video.objects.latest('id')
+    about = About.objects.latest('id')
     choose_us = ChooseUs.objects.latest('id') 
     partners = models.Partners.objects.all()
     title = "О нас"
