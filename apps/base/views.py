@@ -33,14 +33,17 @@ def team(request):
     if request.method == 'POST':
         if "newslater" in request.POST:
             email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
+            existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+            if not existing_subscriber:
+                subscribe = Subscriber.objects.create(email=email)
+                get_text(f"""
+                    ✅ Пользователь подписался на рассылку
+                            
+    ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                            
+    Почта пользователя: {email} 
+    """)
 
     return render(request, 'base/team.html', locals())
 
@@ -58,16 +61,19 @@ def about(request):
     slide = models.Slide.objects.latest('id')
 
     if request.method == 'POST':
-        if "newslater" in request.POST:
-            email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
+            if "newslater" in request.POST:
+                email = request.POST.get('email') 
+                existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+                if not existing_subscriber:
+                    subscribe = Subscriber.objects.create(email=email)
+                    get_text(f"""
+                        ✅ Пользователь подписался на рассылку
+                                
+        ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                                
+        Почта пользователя: {email} 
+        """)
             
     return render(request, 'base/about.html', locals())
 
@@ -98,18 +104,23 @@ def blog(request):
         'slide': slide,
         'news_page': news_page,
     }
-
     if request.method == 'POST':
-        if "newslater" in request.POST:
-            email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
+            if "newslater" in request.POST:
+                email = request.POST.get('email') 
+                existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+                if not existing_subscriber:
+                    subscribe = Subscriber.objects.create(email=email)
+                    get_text(f"""
+                        ✅ Пользователь подписался на рассылку
+                                
+        ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                                
+        Почта пользователя: {email} 
+        """)
+
+    return render(request, 'secondary/blog.html', locals())
+    
 
     return render(request, 'secondary/blog.html', locals())
     
@@ -174,16 +185,23 @@ def faq(request):
 
                 faq.comments.add(new_comment)
 
-        if "newslater" in request.POST:
-            email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
+            if request.method == 'POST':
+                if "newslater" in request.POST:
+                    email = request.POST.get('email') 
+                    existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+                    if not existing_subscriber:
+                        subscribe = Subscriber.objects.create(email=email)
+                        get_text(f"""
+                            ✅ Пользователь подписался на рассылку
+                                    
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                                    
+            Почта пользователя: {email} 
+            """)
+
+    return render(request, 'secondary/blog.html', locals())
+    
             
     return render(request, 'secondary/faq.html', locals())
 
@@ -191,25 +209,33 @@ def service(request):
     title = "Услуги"
     services = Service.objects.all() 
     settings = Settings.objects.latest("id")
-    # services = Service.objects.all()
 
     if request.method == 'POST':
         if "newslater" in request.POST:
             email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
-            
+            existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+        if request.method == 'POST':
+            if "newslater" in request.POST:
+                    email = request.POST.get('email') 
+                    existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+                    if not existing_subscriber:
+                        subscribe = Subscriber.objects.create(email=email)
+                        get_text(f"""
+                            ✅ Пользователь подписался на рассылку
+                                    
+            ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                                    
+            Почта пользователя: {email} 
+            """)
+
     return render(request, 'service/service-1.html', locals())
+
 
 def service_detail(request, id):
     title = "Услуги побробнее"
-    # service = Service.objects.get(id=id)    
+    services = Service.objects.get(id=id) 
     settings = Settings.objects.latest("id")
     slide = models.Slide.objects.latest('id')
     all_news = models.News.objects.all()
@@ -245,14 +271,17 @@ def price(request):
     if request.method == 'POST':
         if "newslater" in request.POST:
             email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
+            existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+            if not existing_subscriber:
+                subscribe = Subscriber.objects.create(email=email)
+                get_text(f"""
+                    ✅ Пользователь подписался на рассылку
+                            
+    ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                            
+    Почта пользователя: {email} 
+    """)
             
     return render(request, 'secondary/price.html', locals())
 
@@ -267,14 +296,17 @@ def team_details(request, id):
     if request.method == 'POST':
         if "newslater" in request.POST:
             email = request.POST.get('email') 
-            subscribe = Subscriber.objects.create(email = email)
-            get_text(f"""
-                ✅Пользователь подписался на рассылку
-                         
-⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-                         
-Почта пользователя: {email}
-""")
+            existing_subscriber = Subscriber.objects.filter(email=email).first()
+
+            if not existing_subscriber:
+                subscribe = Subscriber.objects.create(email=email)
+                get_text(f"""
+                    ✅ Пользователь подписался на рассылку
+                            
+    ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+                            
+    Почта пользователя: {email} 
+    """)
     return render(request, 'secondary/team-details.html', locals())
 
 
